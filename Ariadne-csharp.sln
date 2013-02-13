@@ -51,6 +51,7 @@ Global
 		$3.scope = text/plain
 	EndGlobalSection
 										GlobalSection(MonoDevelopProperties) = preSolution
+																									GlobalSection(MonoDevelopProperties) = preSolution
 =======
 			GlobalSection(MonoDevelopProperties) = preSolution
 >>>>>>> EnemyController script

@@ -1,6 +1,18 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+<<<<<<< HEAD
   <MonoDevelop.Ide.Workbench />
+=======
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Standard Assets/Character Controllers/Sources/Scripts/sphereSwitch.cs">
+    <Files>
+      <File FileName="Assets/Standard Assets/Character Controllers/Sources/Scripts/sphereSwitch.cs" Line="18" Column="13" />
+      <File FileName="Assets/Standard Assets/Character Controllers/Sources/Scripts/enemyController.js" Line="1" Column="1" />
+      <File FileName="Assets/Standard Assets/Character Controllers/Sources/Scripts/player2Controls.js" Line="15" Column="3" />
+      <File FileName="Assets/PlayerBehaviourScript.js" Line="1" Column="1" />
+      <File FileName="Assets/Standard Assets/Character Controllers/Sources/Scripts/SmoothLookAt.js" Line="1" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+>>>>>>> switch now works
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
