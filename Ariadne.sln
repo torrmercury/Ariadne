@@ -5,6 +5,8 @@ Project("{735AC618-5EE8-29AE-F3D1-E045EEDBFA85}") = "Ariadne", "Assembly-CSharp-
 EndProject
 Project("{735AC618-5EE8-29AE-F3D1-E045EEDBFA85}") = "Ariadne", "Assembly-CSharp.csproj", "{5F77198F-FD80-95B3-E988-DD05C205A9F5}"
 EndProject
+Project("{735AC618-5EE8-29AE-F3D1-E045EEDBFA85}") = "Ariadne", "Assembly-CSharp-Editor.csproj", "{9DD53ECE-E542-AD62-C843-0D01BFAE4BBE}"
+EndProject
 Project("{735AC618-5EE8-29AE-F3D1-E045EEDBFA85}") = "Ariadne", "Assembly-UnityScript-firstpass.unityproj", "{81B66541-35FA-3797-2799-5C9E74D280EC}"
 EndProject
 Project("{735AC618-5EE8-29AE-F3D1-E045EEDBFA85}") = "Ariadne", "Assembly-UnityScript.unityproj", "{DE087470-6664-68BB-3634-D8D95F44D350}"
@@ -23,6 +25,10 @@ Global
 		{5F77198F-FD80-95B3-E988-DD05C205A9F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5F77198F-FD80-95B3-E988-DD05C205A9F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5F77198F-FD80-95B3-E988-DD05C205A9F5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9DD53ECE-E542-AD62-C843-0D01BFAE4BBE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9DD53ECE-E542-AD62-C843-0D01BFAE4BBE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9DD53ECE-E542-AD62-C843-0D01BFAE4BBE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9DD53ECE-E542-AD62-C843-0D01BFAE4BBE}.Release|Any CPU.Build.0 = Release|Any CPU
 		{81B66541-35FA-3797-2799-5C9E74D280EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{81B66541-35FA-3797-2799-5C9E74D280EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{81B66541-35FA-3797-2799-5C9E74D280EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -35,7 +41,7 @@ Global
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
-								GlobalSection(MonoDevelopProperties) = preSolution
+													GlobalSection(MonoDevelopProperties) = preSolution
 =======
 			GlobalSection(MonoDevelopProperties) = preSolution
 >>>>>>> EnemyController script
