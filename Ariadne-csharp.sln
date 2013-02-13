@@ -3,6 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 
 Project("{735AC618-5EE8-29AE-F3D1-E045EEDBFA85}") = "Ariadne", "Assembly-CSharp-firstpass-vs.csproj", "{1B9E9333-56F5-8AD3-D5EA-A13158D7C212}"
 EndProject
+<<<<<<< HEAD
+=======
+Project("{735AC618-5EE8-29AE-F3D1-E045EEDBFA85}") = "Ariadne", "Assembly-CSharp-vs.csproj", "{5F77198F-FD80-95B3-E988-DD05C205A9F5}"
+EndProject
+>>>>>>> EnemyController script
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,11 +18,22 @@ Global
 		{1B9E9333-56F5-8AD3-D5EA-A13158D7C212}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1B9E9333-56F5-8AD3-D5EA-A13158D7C212}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1B9E9333-56F5-8AD3-D5EA-A13158D7C212}.Release|Any CPU.Build.0 = Release|Any CPU
+<<<<<<< HEAD
+=======
+		{5F77198F-FD80-95B3-E988-DD05C205A9F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F77198F-FD80-95B3-E988-DD05C205A9F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F77198F-FD80-95B3-E988-DD05C205A9F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F77198F-FD80-95B3-E988-DD05C205A9F5}.Release|Any CPU.Build.0 = Release|Any CPU
+>>>>>>> EnemyController script
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
+<<<<<<< HEAD
 								GlobalSection(MonoDevelopProperties) = preSolution
+=======
+				GlobalSection(MonoDevelopProperties) = preSolution
+>>>>>>> EnemyController script
 		StartupItem = Assembly-CSharp.csproj
 		Policies = $0
 		$0.TextStylePolicy = $1
