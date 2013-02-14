@@ -1,14 +1,9 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/forceMovement.js">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/PlayerBehaviourScript.js">
     <Files>
-      <File FileName="Assets/Standard Assets/Character Controllers/Sources/Scripts/sphereSwitch.cs" Line="1" Column="1" />
-      <File FileName="Assets/Standard Assets/Character Controllers/Sources/Scripts/SmoothLookAt.js" Line="1" Column="1" />
-      <File FileName="Assets/PlayerBehaviourScript.js" Line="1" Column="1" />
-      <File FileName="Assets/player2control.js" Line="1" Column="1" />
-      <File FileName="Assets/forceMovement.js" Line="1" Column="22" />
-      <File FileName="Assets/Standard Assets/Character Controllers/Sources/Scripts/enemyController.js" Line="1" Column="1" />
-      <File FileName="Assets/wallDetect.js" Line="16" Column="2" />
+      <File FileName="Assets/Standard Assets/Character Controllers/Sources/Scripts/ThirdPersonController.js" Line="1" Column="1" />
+      <File FileName="Assets/PlayerBehaviourScript.js" Line="1" Column="22" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
