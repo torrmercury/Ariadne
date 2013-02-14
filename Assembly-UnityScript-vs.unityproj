@@ -46,6 +46,8 @@
   <ItemGroup>
      <Compile Include="Assets\PlayerBehaviourScript.js" />
      <Compile Include="Assets\forceMovement.js" />
+     <Compile Include="Assets\moveToStartP1.js" />
+     <Compile Include="Assets\moveToStartp2.js" />
      <Compile Include="Assets\player2control.js" />
      <Compile Include="Assets\wallDetect.js" />
      <None Include="Assets\Hard Surface Free\HardSurface Shaders\HardSurfacePro Hidden Front Cut Out Specular.shader" />
