@@ -1,18 +1,16 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-<<<<<<< HEAD
-  <MonoDevelop.Ide.Workbench />
-=======
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Standard Assets/Character Controllers/Sources/Scripts/sphereSwitch.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/forceMovement.js">
     <Files>
-      <File FileName="Assets/Standard Assets/Character Controllers/Sources/Scripts/sphereSwitch.cs" Line="18" Column="13" />
-      <File FileName="Assets/Standard Assets/Character Controllers/Sources/Scripts/enemyController.js" Line="1" Column="1" />
-      <File FileName="Assets/Standard Assets/Character Controllers/Sources/Scripts/player2Controls.js" Line="15" Column="3" />
-      <File FileName="Assets/PlayerBehaviourScript.js" Line="1" Column="1" />
+      <File FileName="Assets/Standard Assets/Character Controllers/Sources/Scripts/sphereSwitch.cs" Line="1" Column="1" />
       <File FileName="Assets/Standard Assets/Character Controllers/Sources/Scripts/SmoothLookAt.js" Line="1" Column="1" />
+      <File FileName="Assets/PlayerBehaviourScript.js" Line="1" Column="1" />
+      <File FileName="Assets/player2control.js" Line="1" Column="1" />
+      <File FileName="Assets/forceMovement.js" Line="1" Column="22" />
+      <File FileName="Assets/Standard Assets/Character Controllers/Sources/Scripts/enemyController.js" Line="1" Column="1" />
+      <File FileName="Assets/wallDetect.js" Line="16" Column="2" />
     </Files>
   </MonoDevelop.Ide.Workbench>
->>>>>>> switch now works
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
