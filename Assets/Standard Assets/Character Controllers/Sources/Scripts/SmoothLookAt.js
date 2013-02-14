@@ -3,24 +3,24 @@ var damping = 6.0;
 var smooth = true;
 var target : Transform;
 var player1: Transform;
-var player2: Transform;
+var player2: Transform;;
 
 @script AddComponentMenu("Camera-Control/Smooth Look At")
 
 function LateUpdate () {
-	if (target) {
-		if (smooth)
-		{
-			// Look at and dampen the rotation
-			var rotation = Quaternion.LookRotation(target.position - transform.position);
-			transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * damping);
+		if (target) {
+			if (smooth)
+			{
+				// Look at and dampen the rotation
+				var rotation = Quaternion.LookRotation(target.position - transform.position);
+				transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * damping);
+			}
+			else
+			{
+				// Just lookat
+			    transform.LookAt(target);
+			}
 		}
-		else
-		{
-			// Just lookat
-		    transform.LookAt(target);
-		}
-	}
 	
 }
 

@@ -1,4 +1,4 @@
-var speed : int = 200;
+var speed : int = 600;
 
 function FixedUpdate () {
 	if (Input.GetKey (KeyCode.W)){
