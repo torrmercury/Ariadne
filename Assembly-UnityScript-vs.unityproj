@@ -44,6 +44,7 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\EnemyWatchBehavior.js" />
      <Compile Include="Assets\PlayerBehaviourScript.js" />
      <Compile Include="Assets\forceMovement.js" />
      <Compile Include="Assets\moveToStartP1.js" />

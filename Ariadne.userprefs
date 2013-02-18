@@ -1,25 +1,6 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-<<<<<<< HEAD
-<<<<<<< HEAD
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/PlayerBehaviourScript.js">
-    <Files>
-      <File FileName="Assets/Standard Assets/Character Controllers/Sources/Scripts/ThirdPersonController.js" Line="1" Column="1" />
-      <File FileName="Assets/PlayerBehaviourScript.js" Line="1" Column="22" />
-=======
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Standard Assets/Character Controllers/Sources/Scripts/SmoothLookAt.js">
-    <Files>
-      <File FileName="Assets/Standard Assets/Character Controllers/Sources/Scripts/sphereSwitch.cs" Line="1" Column="1" />
-      <File FileName="Assets/Standard Assets/Character Controllers/Sources/Scripts/enemyController.js" Line="21" Column="1" />
-      <File FileName="Assets/player2control.js" Line="1" Column="1" />
-      <File FileName="Assets/moveToStartP1.js" Line="2" Column="41" />
-      <File FileName="Assets/Standard Assets/Character Controllers/Sources/Scripts/SmoothLookAt.js" Line="54" Column="35" />
->>>>>>> new code
-    </Files>
-  </MonoDevelop.Ide.Workbench>
-=======
   <MonoDevelop.Ide.Workbench />
->>>>>>> d
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
