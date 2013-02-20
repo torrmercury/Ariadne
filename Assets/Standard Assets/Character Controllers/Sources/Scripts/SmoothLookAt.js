@@ -44,6 +44,19 @@ function changeTarget(){
 	else { target = player1 ;}
 }
 
+function OnTriggerStay (other : Collider) {
+	if (other.transform == player1){
+		Debug.Log("PLayer1 got hit");
+		other.transform.position = spawnPoint1;
+		target = player2;
+		
+	}else if (other.transform == player2){
+		Debug.Log("PLayer2 got hit");
+		other.transform.position = spawnPoint2;
+		target = player1;
+	}
+}
+
 function OnTriggerEnter (other : Collider) {
 	if (other.transform == player1){
 		Debug.Log("PLayer1 got hit");
