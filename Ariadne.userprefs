@@ -1,6 +1,17 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+<<<<<<< HEAD
   <MonoDevelop.Ide.Workbench />
+=======
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/EnemyGhostBehavior.js">
+    <Files>
+      <File FileName="Assets/Hard Surface Free/HardSurface Shaders/HardSurface Free Opaque Specular.shader" Line="1" Column="1" />
+      <File FileName="Assets/Standard Assets/Character Controllers/Sources/Scripts/DoorSwitch.cs" Line="19" Column="12" />
+      <File FileName="Assets/DoorScript1.cs" Line="1" Column="1" />
+      <File FileName="Assets/EnemyGhostBehavior.js" Line="10" Column="4" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+>>>>>>> end screen added
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
