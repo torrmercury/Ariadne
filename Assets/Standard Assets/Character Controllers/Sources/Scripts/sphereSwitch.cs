@@ -5,6 +5,8 @@ public class sphereSwitch : MonoBehaviour {
 	
 	bool switched = false;
 	public GameObject enemy;
+	public GameObject player1;
+	public GameObject player2;
 	
 	void Start () {
 	
@@ -15,8 +17,9 @@ public class sphereSwitch : MonoBehaviour {
 		
 	}
 	public void OnTriggerEnter(Collider other){
-		if (enemy != other.gameObject){
+		if (player1 == other.gameObject || player2 == other.gameObject){
 			enemy.SendMessage("changeTarget");
+			Destroy(gameObject);
 		}
 	}
 }
