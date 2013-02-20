@@ -15,6 +15,8 @@ public class sphereSwitch : MonoBehaviour {
 		
 	}
 	public void OnTriggerEnter(Collider other){
-		enemy.SendMessage("changeTarget");
+		if (enemy != other.gameObject){
+			enemy.SendMessage("changeTarget");
+		}
 	}
 }

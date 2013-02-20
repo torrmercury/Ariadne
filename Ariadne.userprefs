@@ -1,14 +1,6 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/SwitchBehavior2.js">
-    <Files>
-      <File FileName="Assets/Top_Down_Assets/Player1Control.js" Line="1" Column="1" />
-      <File FileName="Assets/SwitchBehavior.cs" Line="1" Column="1" />
-      <File FileName="Assets/SwitchBehavior2.js" Line="1" Column="15" />
-      <File FileName="Assets/EnemyGhostBehavior.js" Line="1" Column="1" />
-      <File FileName="Assets/Standard Assets/Character Controllers/Sources/Scripts/SmoothLookAt.js" Line="60" Column="24" />
-    </Files>
-  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
