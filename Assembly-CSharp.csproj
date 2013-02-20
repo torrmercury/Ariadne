@@ -46,7 +46,6 @@
   <ItemGroup>
      <Compile Include="Assets\DoorScript1.cs" />
      <Compile Include="Assets\SwitchBehavior(not used).cs" />
-     <Compile Include="Assets\switchBehavior.cs" />
      <Compile Include="Assets\weGotAWinner.cs" />
      <None Include="Assets\Hard Surface Free\HardSurface Shaders\HardSurfacePro Hidden Front Cut Out Specular.shader" />
      <None Include="Assets\Hard Surface Free\HardSurface Shaders\HardSurface Free Cut Out Opaque Bump.shader" />

@@ -4,8 +4,6 @@ var ySpeed = 120.0;
 private var x = 0.0;
 private var y = 0.0;
  
-@script AddComponentMenu("Camera-Control/Mouse Orbit")
- 
 function Start () {
     var angles = transform.eulerAngles;
     x = angles.y;

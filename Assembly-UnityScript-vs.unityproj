@@ -47,6 +47,7 @@
      <Compile Include="Assets\EnemyGhostBehavior.js" />
      <Compile Include="Assets\EnemyWatchBehavior.js" />
      <Compile Include="Assets\JoystickLook.js" />
+     <Compile Include="Assets\JoystickMotor.js" />
      <Compile Include="Assets\KeyboardMotor.js" />
      <Compile Include="Assets\SwitchBehavior2(not used).js" />
      <Compile Include="Assets\Top_Down_Assets\Player1Control.js" />

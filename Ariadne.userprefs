@@ -1,5 +1,6 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+<<<<<<< HEAD
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Standard Assets/Character Controllers/Sources/Scripts/sphereSwitch.cs">
     <Files>
       <File FileName="Assets/Hard Surface Free/HardSurface Shaders/HardSurface Free Opaque Specular.shader" Line="1" Column="1" />
@@ -9,6 +10,18 @@
       <File FileName="Assets/weGotAWinner.cs" Line="1" Column="1" />
       <File FileName="Assets/Hard Surface Free/HardSurface Shaders/HardSurface Free Opaque.shader" Line="1" Column="1" />
       <File FileName="Assets/Standard Assets/Character Controllers/Sources/Scripts/sphereSwitch.cs" Line="1" Column="19" />
+=======
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Standard Assets/Character Controllers/Sources/Scripts/CharacterMotor.js">
+    <Files>
+      <File FileName="Assets/Standard Assets/Character Controllers/Sources/Scripts/DoorSwitch.cs" Line="1" Column="1" />
+      <File FileName="Assets/Standard Assets/Character Controllers/Sources/Scripts/SmoothLookAt.js" Line="1" Column="1" />
+      <File FileName="Assets/Top_Down_Assets/Player1Control.js" Line="1" Column="1" />
+      <File FileName="Assets/KeyboardMotor.js" Line="1" Column="1" />
+      <File FileName="Assets/EnemyGhostBehavior.js" Line="1" Column="1" />
+      <File FileName="Assets/JoystickLook.js" Line="1" Column="1" />
+      <File FileName="Assets/Standard Assets/Character Controllers/Sources/Scripts/CharacterMotor.js" Line="333" Column="1" />
+      <File FileName="Assets/Standard Assets/Character Controllers/Sources/Scripts/FPSInputController.js" Line="14" Column="37" />
+>>>>>>> successfully separated joystick and keyboard+mouse
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
