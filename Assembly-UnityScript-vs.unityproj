@@ -44,13 +44,15 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\EnemyGhostBehavior.js" />
      <Compile Include="Assets\EnemyWatchBehavior.js" />
-     <Compile Include="Assets\PlayerBehaviourScript.js" />
+     <Compile Include="Assets\SwitchBehavior2.js" />
+     <Compile Include="Assets\Top_Down_Assets\Player1Control.js" />
+     <Compile Include="Assets\Top_Down_Assets\Player2Control.js" />
+     <Compile Include="Assets\Top_Down_Assets\moveToStartP1.js" />
+     <Compile Include="Assets\Top_Down_Assets\moveToStartp2.js" />
+     <Compile Include="Assets\Top_Down_Assets\wallDetect.js" />
      <Compile Include="Assets\forceMovement.js" />
-     <Compile Include="Assets\moveToStartP1.js" />
-     <Compile Include="Assets\moveToStartp2.js" />
-     <Compile Include="Assets\player2control.js" />
-     <Compile Include="Assets\wallDetect.js" />
      <None Include="Assets\Hard Surface Free\HardSurface Shaders\HardSurfacePro Hidden Front Cut Out Specular.shader" />
      <None Include="Assets\Hard Surface Free\HardSurface Shaders\HardSurface Free Cut Out Opaque Bump.shader" />
      <None Include="Assets\Hard Surface Free\HardSurface Shaders\HardSurfacePro Hidden Front Transparent.shader" />

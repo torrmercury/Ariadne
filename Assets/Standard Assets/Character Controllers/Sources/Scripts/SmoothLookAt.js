@@ -5,6 +5,9 @@ var target : Transform;
 var player1: Transform;
 var player2: Transform;
 
+var spawnPoint1: Vector3;
+var spawnPoint2: Vector3;
+
 @script AddComponentMenu("Camera-Control/Smooth Look At")
 
 function LateUpdate () {
@@ -28,6 +31,9 @@ function Start () {
 	// Make the rigid body not change rotation
    	if (rigidbody)
 		rigidbody.freezeRotation = true;
+		
+	spawnPoint1 = player1.position;
+	spawnPoint2 = player2.position;
 }
 
 
@@ -39,19 +45,14 @@ function changeTarget(){
 }
 
 function OnTriggerEnter (other : Collider) {
-	var collid1 : CapsuleCollider;
-	collid1 = player1.GetComponent("CapsuleCollider");
-	if (other == collid1){
+	if (other.transform == player1){
 		Debug.Log("PLayer1 got hit");
-		player1.SendMessage("moveToStart");
+		other.transform.position = spawnPoint1;
 		target = player2;
 		
-	}
-	var collid12 : CapsuleCollider;
-	collid2 = player2.GetComponent("CapsuleCollider");
-	if (other == collid2){
+	}else if (other.transform == player2){
 		Debug.Log("PLayer2 got hit");
-		player2.SendMessage("moveToStart");
+		other.transform.position = spawnPoint2;
 		target = player1;
 	}
 }
