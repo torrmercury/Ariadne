@@ -16,7 +16,9 @@ public class DoorSwitch : MonoBehaviour {
 	
 	}
 	public void OnTriggerEnter(Collider other){
-		door.SendMessage("openSesame");
-		Destroy (this);
+		if (enemy != other.gameObject){
+			door.SendMessage("openSesame");
+			Destroy (this);
+		}
 	}
 }
