@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
-public class sphereSwitch : MonoBehaviour {
+public class Aggro_Switch : MonoBehaviour {
 	
 	bool switched = false;
 	public GameObject enemy;
