@@ -46,6 +46,7 @@
   <ItemGroup>
      <Compile Include="Assets\EnemyGhostBehavior.js" />
      <Compile Include="Assets\EnemyWatchBehavior.js" />
+     <Compile Include="Assets\JoystickControl2.js" />
      <Compile Include="Assets\JoystickLook.js" />
      <Compile Include="Assets\JoystickMotor.js" />
      <Compile Include="Assets\KeyboardMotor.js" />
