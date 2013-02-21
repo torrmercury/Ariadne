@@ -3,9 +3,9 @@ using System.Collections;
 
 public class DoorSwitch : MonoBehaviour {
 	
-	
+	public GameObject player;
 	public GameObject enemy;
-	public GameObject door;
+	//public GameObject door;
 	// Use this for initialization
 	void Start () {
 	
@@ -16,8 +16,8 @@ public class DoorSwitch : MonoBehaviour {
 	
 	}
 	public void OnTriggerEnter(Collider other){
-		if (enemy != other.gameObject){
-			door.SendMessage("openSesame");
+		//destorys itself if the key is meant for the player
+		if ( player == other.gameObject){
 			Destroy (this);
 		}
 	}

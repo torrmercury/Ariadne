@@ -18,6 +18,7 @@ public class Aggro_Switch : MonoBehaviour {
 	}
 	public void OnTriggerEnter(Collider other){
 		if (player1 == other.gameObject || player2 == other.gameObject){
+			Debug.Log ("YOOOO");
 			enemy.SendMessage("changeTarget");
 			Destroy(gameObject);
 		}
