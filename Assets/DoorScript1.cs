@@ -16,10 +16,10 @@ public class DoorScript1 : MonoBehaviour {
 	
 	void openSesame(){
 		Debug.Log ("open sesame");
-		Destroy (gameObject);
+		Destroy (this.gameObject);
 		
 	}
-	public void OnCollisionEnter(Collision other){
+	public void OnCollision(Collision other){
 		Debug.Log ("howdy");
 	}
 }

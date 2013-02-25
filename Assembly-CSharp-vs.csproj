@@ -45,6 +45,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\DoorScript1.cs" />
+     <Compile Include="Assets\HUDscript.cs" />
      <Compile Include="Assets\SwitchBehavior(not used).cs" />
      <Compile Include="Assets\playerBackpack.cs" />
      <Compile Include="Assets\weGotAWinner.cs" />

@@ -16,6 +16,27 @@ public class playerBackpack : MonoBehaviour {
 	void Update () {
 	
 	}
+	void OnControllerColliderHit( ControllerColliderHit other ){
+		Debug.Log ("collision happend with door1");
+		
+		if ( this.gameObject.tag.Equals( "Player1")){
+			Debug.Log ("collision happend with door1");
+			if ( other.gameObject.CompareTag("door1") && key == true){
+				myDoor.SendMessage("openSesame");
+				Debug.Log ("made it");
+				key = false;
+			}
+		}
+		
+		//open the door when the player2  has key2 and hits door2 
+		if ( this.gameObject.CompareTag("Player2")){
+			if( other.gameObject.CompareTag("door2") && key == true){
+				myDoor.SendMessage("openSesame");
+				key = false;
+			}
+		}
+	}
+	/*
 	
 	public void OnCollisionEnter ( Collision other ){
 		//open the door when the player1  has key1 and hits door1 
@@ -38,8 +59,10 @@ public class playerBackpack : MonoBehaviour {
 			}
 		}
 	}
+	*/
 	public void haveKey(){
 		Debug.Log ("player1 key = true");
 		key = true;
 	}
+	
 }

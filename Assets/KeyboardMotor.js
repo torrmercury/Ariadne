@@ -7,11 +7,16 @@ function FixedUpdate () {
 		HDir = this.transform.forward;
 		HDir.y = 0;
 		controller.Move(HDir.normalized * Time.deltaTime*speed);
+		var flags;
+		flags = controller.Move(HDir.normalized * Time.deltaTime*speed);
+		//Debug.Log(flags);
 	}
 	if (Input.GetKey (KeyCode.DownArrow) || Input.GetKey(KeyCode.S)){
 		HDir = this.transform.forward * -1;
 		HDir.y = 0;
-		controller.Move(HDir.normalized * Time.deltaTime*speed);
+		//var flags;
+		flags = controller.Move(HDir.normalized * Time.deltaTime*speed);
+		//Debug.Log(flags);
 	}
 	if (Input.GetKey (KeyCode.LeftArrow) || Input.GetKey(KeyCode.A)){
 		HDir = this.transform.right * -1;
