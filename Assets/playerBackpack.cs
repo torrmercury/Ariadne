@@ -17,17 +17,29 @@ public class playerBackpack : MonoBehaviour {
 	
 	}
 	
-	public void onTriggerEnter ( Collider other ){
-		//can collide with the key and puts it in its backpack as true
-		if ( keySphere == other.gameObject ){
-			Debug.Log ("made it");
-			key = true;
+	public void OnCollisionEnter ( Collision other ){
+		//open the door when the player1  has key1 and hits door1 
+		Debug.Log ("collision happend with door1");
+		
+		if ( this.gameObject.tag.Equals( "player1")){
+			Debug.Log ("collision happend with door1");
+			if ( other.gameObject.CompareTag("door1") && key == true){
+				myDoor.SendMessage("openSesame");
+				Debug.Log ("made it");
+				key = false;
+			}
 		}
-		//open the door when the player hits the right door 
-		if ( other.gameObject == myDoor && key == true ){
-			myDoor.SendMessage("openSesame");
-			key = false;
+		
+		//open the door when the player2  has key2 and hits door2 
+		else if ( this.gameObject.CompareTag("player2")){
+			if( other.gameObject.CompareTag("door2") && key == true){
+				myDoor.SendMessage("openSesame");
+				key = false;
+			}
 		}
 	}
-	
+	public void haveKey(){
+		Debug.Log ("player1 key = true");
+		key = true;
+	}
 }

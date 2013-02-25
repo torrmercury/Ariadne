@@ -1,6 +1,6 @@
 var speed : int = 5;
 
-function Update () {
+function FixedUpdate () {
 	var controller : CharacterController = GetComponent(CharacterController);
 	var HDir = Vector3.zero;
 	if (Input.GetKey (KeyCode.UpArrow) || Input.GetKey(KeyCode.W)){

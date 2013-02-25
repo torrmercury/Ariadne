@@ -19,4 +19,7 @@ public class DoorScript1 : MonoBehaviour {
 		Destroy (gameObject);
 		
 	}
+	public void OnCollisionEnter(Collision other){
+		Debug.Log ("howdy");
+	}
 }
