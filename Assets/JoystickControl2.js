@@ -32,7 +32,7 @@ function Update () {
 	
 	ForwardDir = this.transform.forward;
 	RightDir = this.transform.right;
-	CombinedDir = ForwardDir * Input.GetAxis("Joy V2") + RightDir * Input.GetAxis("Joy H2");
+	CombinedDir = ForwardDir * Input.GetAxis("Joy V2") * -1 + RightDir * Input.GetAxis("Joy H2");
 	CombinedDir.y = 0;
 	controller.Move(CombinedDir.normalized * Time.deltaTime * speed);
 }

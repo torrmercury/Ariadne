@@ -1,6 +1,7 @@
 var xSpeed = 250.0;
 var ySpeed = 120.0;
- 
+var speed : int = 5;
+
 private var x = 0.0;
 private var y = 0.0;
  
@@ -22,4 +23,15 @@ function LateUpdate () {
         var rotation = Quaternion.Euler(y, x, 0);
  
         transform.rotation = rotation;
+}
+
+function Update () {
+	var controller : CharacterController = GetComponent(CharacterController);
+	var HDir = Vector3.zero;
+	
+	ForwardDir = this.transform.forward;
+	RightDir = this.transform.right;
+	CombinedDir = ForwardDir * Input.GetAxis("Joy V") + RightDir * Input.GetAxis("Joy H");
+	CombinedDir.y = 0;
+	controller.Move(CombinedDir.normalized * Time.deltaTime * speed);
 }
