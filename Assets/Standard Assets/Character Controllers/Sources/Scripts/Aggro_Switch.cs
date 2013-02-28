@@ -7,6 +7,7 @@ public class Aggro_Switch : MonoBehaviour {
 	public GameObject enemy;
 	public GameObject player1;
 	public GameObject player2;
+	public GameObject goal;
 	
 	void Start () {
 	
@@ -20,6 +21,7 @@ public class Aggro_Switch : MonoBehaviour {
 		if (player1 == other.gameObject || player2 == other.gameObject){
 			Debug.Log ("YOOOO");
 			enemy.SendMessage("changeTarget");
+			goal.SendMessage("targetChanged");
 			Destroy(gameObject);
 		}
 	}

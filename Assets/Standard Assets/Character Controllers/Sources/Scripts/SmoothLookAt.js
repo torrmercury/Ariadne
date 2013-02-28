@@ -4,6 +4,8 @@ var smooth = true;
 var target : Transform;
 var player1: Transform;
 var player2: Transform;
+var goal: Transform;
+//static var TARGET_NUM = 0 ;
 
 var spawnPoint1: Vector3;
 var spawnPoint2: Vector3;
@@ -43,33 +45,40 @@ function changeTarget(){
 	if (target == player1){ target = player2;}
 	else { target = player1 ;}
 }
-
+/*
 function OnTriggerStay (other : Collider) {
 	if (other.transform == player1){
 		Debug.Log("PLayer1 got hit");
 		other.transform.position = spawnPoint1;
 		target = player2;
-		
+			
 	}else if (other.transform == player2){
 		Debug.Log("PLayer2 got hit");
 		other.transform.position = spawnPoint2;
 		target = player1;
+		
 	}
 }
-
+*/
 function OnTriggerEnter (other : Collider) {
 	if (other.transform == player1){
 		Debug.Log("Player1 got hit");
 		other.transform.position = spawnPoint1;
 		target = player2;
-		
+	    goal.SendMessage("targetChanged");
+				
 	}else if (other.transform == player2){
 		Debug.Log("Player2 got hit");
 		other.transform.position = spawnPoint2;
 		target = player1;
+		goal.SendMessage("targetChanged");		
+		
 	}
 }
 
-function getTarget(){
-	return target;
+function getTarget(): int{
+	if ( target == player1){	
+		return 1;
+	}
+	else{ return 2;	}
 }

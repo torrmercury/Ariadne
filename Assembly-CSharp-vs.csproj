@@ -45,8 +45,12 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\DoorScript1.cs" />
+     <Compile Include="Assets\DoorSwitch.cs" />
+     <Compile Include="Assets\HUDScript2.cs" />
      <Compile Include="Assets\HUDscript.cs" />
      <Compile Include="Assets\SwitchBehavior(not used).cs" />
+     <Compile Include="Assets\enemyHUD.cs" />
+     <Compile Include="Assets\enemyTargetTracker.cs" />
      <Compile Include="Assets\playerBackpack.cs" />
      <Compile Include="Assets\weGotAWinner.cs" />
      <None Include="Assets\Hard Surface Free\HardSurface Shaders\HardSurfacePro Hidden Front Cut Out Specular.shader" />

@@ -1,7 +1,5 @@
 fileFormatVersion: 2
-guid: cbdf6a20843be2a4d841efa9ada7850d
-labels:
-- Floor
+guid: b2ef4a68284e740c3b6b7af3035451ac
 TextureImporter:
   serializedVersion: 2
   mipmaps:
@@ -25,13 +23,13 @@ TextureImporter:
   textureFormat: -1
   maxTextureSize: 1024
   textureSettings:
-    filterMode: 1
+    filterMode: -1
     aniso: -1
     mipBias: -1
-    wrapMode: 0
+    wrapMode: -1
   nPOTScale: 1
   lightmap: 0
   compressionQuality: 50
-  textureType: 0
+  textureType: -1
   buildTargetSettings: []
   userData: 
