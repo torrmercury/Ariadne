@@ -44,6 +44,8 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Camera Scripts\MouseOrbit.js" />
+     <Compile Include="Assets\Camera Scripts\SmoothFollow.js" />
      <Compile Include="Assets\EnemyGhostBehavior.js" />
      <Compile Include="Assets\EnemyWatchBehavior.js" />
      <Compile Include="Assets\JoystickControl1.js" />

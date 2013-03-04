@@ -66,13 +66,14 @@ function OnTriggerEnter (other : Collider) {
 		other.transform.position = spawnPoint1;
 		target = player2;
 	    goal.SendMessage("targetChanged");
-	    player1.SendMessage("player1Died");
+	    goal.SendMessage("player1Died");
 				
 	}else if (other.transform == player2){
 		Debug.Log("Player2 got hit");
 		other.transform.position = spawnPoint2;
 		target = player1;
-		goal.SendMessage("targetChanged");		
+		goal.SendMessage("targetChanged");
+		goal.SendMessage("player2Died");		
 		
 	}
 }
