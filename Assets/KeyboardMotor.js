@@ -1,4 +1,4 @@
-var speed : int = 5;
+var speed : int = 10;
 
 function FixedUpdate () {
 	var controller : CharacterController = GetComponent(CharacterController);
