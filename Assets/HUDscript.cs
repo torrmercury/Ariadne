@@ -20,7 +20,7 @@ public class HUDscript : MonoBehaviour {
 		//coords for shared middle HUD
 		Rect sphereRectText = new Rect ( startMiddleBar, screenHeight * .15f ,widthMiddleBar, widthMiddleBar);
 		Rect sphereRect = new Rect ( startMiddleBar, (screenHeight * .15f + widthMiddleBar ), widthMiddleBar, widthMiddleBar);
-		Rect doorRectText = new Rect ( startMiddleBar, screenHeight * .4f, widthMiddleBar, widthMiddleBar);
+		Rect doorRectText = new Rect ( startMiddleBar- (.33f*widthMiddleBar), screenHeight * .4f, 1.5f*widthMiddleBar, widthMiddleBar);
 		Rect doorRect = new Rect ( startMiddleBar, screenHeight * .4f +widthMiddleBar, widthMiddleBar, widthMiddleBar);
 		Rect switchRectText = new Rect(startMiddleBar- (.33f*widthMiddleBar), screenHeight*.65f, 1.5f*widthMiddleBar,widthMiddleBar);
 		Rect switchRect = new Rect(startMiddleBar, screenHeight*.65f +widthMiddleBar, widthMiddleBar,widthMiddleBar);
@@ -28,9 +28,9 @@ public class HUDscript : MonoBehaviour {
 		GUI.DrawTexture(sphereRect,keyTexture);
 		GUI.TextArea(sphereRectText, "FIND THIS");
 		GUI.DrawTexture(doorRect,doorTexture);
-		GUI.TextArea(doorRectText,"TO OPEN THIS");
+		GUI.TextArea(doorRectText,"TO OPEN THIS\nTO WIN");
 		GUI.DrawTexture(switchRect,switchTexture);
-		GUI.TextArea(switchRectText,"ENEMY\nTARGET\nSWITCH");
+		GUI.TextArea(switchRectText,"SWITCH\nENEMY'S\nTARGET");
 		/*
 		//screen coords for switch and its text
 		Rect switchRect = new Rect(screenWidth*.35f, screenHeight*.01f,70,70);

@@ -66,6 +66,7 @@ function OnTriggerEnter (other : Collider) {
 		other.transform.position = spawnPoint1;
 		target = player2;
 	    goal.SendMessage("targetChanged");
+	    player1.SendMessage("player1Died");
 				
 	}else if (other.transform == player2){
 		Debug.Log("Player2 got hit");

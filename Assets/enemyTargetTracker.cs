@@ -12,7 +12,7 @@ public class enemyTargetTracker : MonoBehaviour {
 	}
 	
 	public void targetChanged(){
-		Debug.Log ("targetchanged method called");
+		Debug.Log ("targetchanged method called, target = "+TARGET_PLAYER);
 		TARGET_PLAYER = (TARGET_PLAYER + 1) %2 ;
 	}
 	public void player1KeyGot(){
