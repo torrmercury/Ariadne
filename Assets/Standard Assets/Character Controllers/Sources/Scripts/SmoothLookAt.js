@@ -9,8 +9,11 @@ var goal: Transform;
 
 var spawnPoint1: Vector3;
 var spawnPoint2: Vector3;
+var counter = 0 ;
+var started = 0;
 
 @script AddComponentMenu("Camera-Control/Smooth Look At")
+
 
 function LateUpdate () {
 		if (target) {
