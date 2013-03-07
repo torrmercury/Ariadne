@@ -33,7 +33,7 @@ function LateUpdate () {
 function Update () {
 	//Debug.Log(Input.GetAxis("Sprint"));
 	if (Input.GetButton("Joy Sprint1")){
-		speed = 30;
+		speed = 40;
 	} else{
 		speed = 20;
 	}

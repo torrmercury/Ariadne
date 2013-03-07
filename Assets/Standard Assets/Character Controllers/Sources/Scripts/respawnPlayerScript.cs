@@ -151,7 +151,7 @@ public class respawnPlayerScript : MonoBehaviour {
 			player1Counter = player1Counter + Time.deltaTime;
 			//print (player1Counter);
 			if (player1Counter > 5){
-				print ("hihihi");
+				//print ("hihihi");
 				player1Relocate();
 				player1Respawn();
 				enemyTargetTracker.PLAYER_ONE_DEAD = false;
@@ -171,6 +171,8 @@ public class respawnPlayerScript : MonoBehaviour {
 		}
 	}
 	void Start(){
+		startp1.position = startp1.position;
+		startp2.position = startp2.position;
 		p1rigid = player1.rigidbody;
 		p2rigid = player2.rigidbody;
 	}
