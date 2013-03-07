@@ -31,8 +31,10 @@ function LateUpdate () {
 }
 
 function Update () {
-	
-
+	Debug.Log(Input.GetAxis("Sprint"));
+	if (Input.GetButton("Sprint")){
+		Debug.Log ("sprint!!!!");
+	}
 
 	if (!enemyTargetTracker.PLAYER_ONE_DEAD){
 		var controller : CharacterController = GetComponent(CharacterController);
