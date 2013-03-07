@@ -1,8 +1,8 @@
  
 var xSpeed = 250.0;
 var ySpeed = 120.0;
-var speed : int = 5;
 var goal: Transform;
+var speed : int = 20;
 
 private var x = 0.0;
 private var y = 0.0;
@@ -31,9 +31,11 @@ function LateUpdate () {
 }
 
 function Update () {
-	Debug.Log(Input.GetAxis("Sprint"));
-	if (Input.GetButton("Sprint")){
-		Debug.Log ("sprint!!!!");
+	//Debug.Log(Input.GetAxis("Sprint"));
+	if (Input.GetButton("Joy Sprint1")){
+		speed = 30;
+	} else{
+		speed = 20;
 	}
 
 	if (!enemyTargetTracker.PLAYER_ONE_DEAD){

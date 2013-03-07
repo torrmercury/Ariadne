@@ -1,11 +1,10 @@
 var xSpeed = 250.0;
 var ySpeed = 120.0;
 var goal: Transform;
+var speed : int = 20;
  
 private var x = 0.0;
 private var y = 0.0;
-
-var speed : int = 5;
 
 function Start () {
     var angles = transform.eulerAngles;
@@ -30,6 +29,12 @@ function LateUpdate () {
 }
 
 function Update () {
+	if (Input.GetButton("Joy Sprint1")){
+		speed = 30;
+	} else{
+		speed = 20;
+	}
+
 	if (!enemyTargetTracker.PLAYER_TWO_DEAD){
 		var controller : CharacterController = GetComponent(CharacterController);
 		var HDir = Vector3.zero;
