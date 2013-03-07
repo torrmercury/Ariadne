@@ -63,14 +63,14 @@ function OnTriggerStay (other : Collider) {
 function OnTriggerEnter (other : Collider) {
 	if (other.transform == player1){
 		Debug.Log("Player1 got hit");
-		other.transform.position = spawnPoint1;
+		//other.transform.position = spawnPoint1;
 		target = player2;
 	    goal.SendMessage("targetChanged");
 	    goal.SendMessage("player1Died");
 				
 	}else if (other.transform == player2){
 		Debug.Log("Player2 got hit");
-		other.transform.position = spawnPoint2;
+		//other.transform.position = spawnPoint2;
 		target = player1;
 		goal.SendMessage("targetChanged");
 		goal.SendMessage("player2Died");		

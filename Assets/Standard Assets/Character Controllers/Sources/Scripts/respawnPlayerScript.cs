@@ -7,7 +7,22 @@ public class respawnPlayerScript : MonoBehaviour {
 	public GameObject goal;
 	public GameObject player1;
 	public GameObject player2;
-	public Texture2D blood;
+	
+	//bite textures
+	public Texture2D bite1;
+	public Texture2D bite2;
+	public Texture2D bite3;
+	public Texture2D bite4;
+	public Texture2D bite5;
+	public Texture2D bite6;
+	public Texture2D bite7;
+	public Texture2D bite8;
+	public Texture2D bite9;
+	public Texture2D bite10;
+	public Texture2D bite11;
+	public Texture2D bite12;
+	
+	//start positions
 	public Transform startp1;
 	public Transform startp2;
 	
@@ -22,7 +37,6 @@ public class respawnPlayerScript : MonoBehaviour {
 	
 	//p1 go back to start position 
 	void player1Relocate(){
-	//	player1.transform.position(player1RespawnPoint);
 		player1.transform.position = Vector3.Lerp(this.transform.position, startp1.position, Time.time);
 	}
 	//p1 now alive
@@ -32,9 +46,8 @@ public class respawnPlayerScript : MonoBehaviour {
 	
 	//p2 go back to start
 	void player2Relocate(){
-	//	player1.transform.position(player1RespawnPoint);
 		player2.transform.position = Vector3.Lerp(this.transform.position, startp2.position, Time.time);
-		p2rigid.constraints=RigidbodyConstraints.FreezeAll; 	
+		
 	}
 	//p2 back alive
 	void player2Respawn(){
@@ -45,13 +58,81 @@ public class respawnPlayerScript : MonoBehaviour {
 	void OnGUI(){
 		//show blood texture on screen.
 		if ( player1dead ){
+			GUI.DrawTexture(new Rect(0f, (.52f*Screen.width)-(.48f * Screen.width), Screen.width*.48f, Screen.height), bite1);
+			if( player1Counter > .2){
+				GUI.DrawTexture(new Rect(0f, (.52f*Screen.width)-(.48f * Screen.width), Screen.width*.48f, Screen.height), bite2);
+			}
+			if( player1Counter > .4){
+				GUI.DrawTexture(new Rect(0f, (.52f*Screen.width)-(.48f * Screen.width), Screen.width*.48f, Screen.height), bite3);
+			}
+			if( player1Counter > .6){
+				GUI.DrawTexture(new Rect(0f, (.52f*Screen.width)-(.48f * Screen.width), Screen.width*.48f, Screen.height), bite4);
+			}
+			if( player1Counter > .8){
+				GUI.DrawTexture(new Rect(0f, (.52f*Screen.width)-(.48f * Screen.width), Screen.width*.48f, Screen.height), bite5);
+			}
+			if( player1Counter > 1.0){
+				GUI.DrawTexture(new Rect(0f, (.52f*Screen.width)-(.48f * Screen.width), Screen.width*.48f, Screen.height), bite6);
+			}
+			if( player1Counter > 1.2){
+				GUI.DrawTexture(new Rect(0f, (.52f*Screen.width)-(.48f * Screen.width), Screen.width*.48f, Screen.height), bite7);
+			}
+			if( player1Counter > 1.4){
+				GUI.DrawTexture(new Rect(0f, (.52f*Screen.width)-(.48f * Screen.width), Screen.width*.48f, Screen.height), bite8);
+			}
+			if  (player1Counter > 1.6){
+				GUI.DrawTexture(new Rect(0f, (.52f*Screen.width)-(.48f * Screen.width), Screen.width*.48f, Screen.height), bite9);
+			}
+			if  (player1Counter > 1.8){
+				GUI.DrawTexture(new Rect(0f, (.52f*Screen.width)-(.48f * Screen.width), Screen.width*.48f, Screen.height), bite10);
+			}
+			if  (player1Counter > 2.0){
+				GUI.DrawTexture(new Rect(0f, (.52f*Screen.width)-(.48f * Screen.width), Screen.width*.48f, Screen.height), bite11);
+			}
+			if  (player1Counter > 2.2){
+				GUI.DrawTexture(new Rect(0f, (.52f*Screen.width)-(.48f * Screen.width), Screen.width*.48f, Screen.height), bite12);
+			}
 			
-			GUI.DrawTexture(new Rect(0f, (.52f*Screen.width)-(.48f * Screen.width), Screen.width*.48f, Screen.height), blood);
 			
 		}
 		if (player2dead){
-			GUI.DrawTexture(new Rect(Screen.width*.52f,  Screen.height * .04f, Screen.width*.48f, Screen.height),blood);
+			//GUI.DrawTexture(new Rect(Screen.width*.52f,  Screen.height * .04f, Screen.width*.48f, Screen.height),blood);
+			GUI.DrawTexture(new Rect(Screen.width*.52f,  Screen.height * .04f, Screen.width*.48f, Screen.height), bite1);
+			if( player2Counter > .2){
+				GUI.DrawTexture(new Rect(Screen.width*.52f,  Screen.height * .04f, Screen.width*.48f, Screen.height), bite2);
+			}
+			if( player2Counter > .4){
+				GUI.DrawTexture(new Rect(Screen.width*.52f,  Screen.height * .04f, Screen.width*.48f, Screen.height), bite3);
+			}
+			if( player2Counter > .6){
+				GUI.DrawTexture(new Rect(Screen.width*.52f,  Screen.height * .04f, Screen.width*.48f, Screen.height), bite4);
+			}
+			if( player2Counter > .8){
+				GUI.DrawTexture(new Rect(Screen.width*.52f,  Screen.height * .04f, Screen.width*.48f, Screen.height), bite5);
+			}
+			if( player2Counter > 1.0){
+				GUI.DrawTexture(new Rect(Screen.width*.52f,  Screen.height * .04f, Screen.width*.48f, Screen.height), bite6);
+			}
+			if( player2Counter > 1.2){
+				GUI.DrawTexture(new Rect(Screen.width*.52f,  Screen.height * .04f, Screen.width*.48f, Screen.height), bite7);
+			}
+			if( player2Counter > 1.4){
+				GUI.DrawTexture(new Rect(Screen.width*.52f,  Screen.height * .04f, Screen.width*.48f, Screen.height), bite8);
+			}
+			if  (player2Counter > 1.6){
+				GUI.DrawTexture(new Rect(Screen.width*.52f,  Screen.height * .04f, Screen.width*.48f, Screen.height), bite9);
+			}
+			if  (player2Counter > 1.8){
+				GUI.DrawTexture(new Rect(Screen.width*.52f,  Screen.height * .04f, Screen.width*.48f, Screen.height), bite10);
+			}
+			if  (player2Counter > 2.0){
+				GUI.DrawTexture(new Rect(Screen.width*.52f,  Screen.height * .04f, Screen.width*.48f, Screen.height), bite11);
+			}
+			if  (player2Counter > 2.2){
+				GUI.DrawTexture(new Rect(Screen.width*.52f,  Screen.height * .04f, Screen.width*.48f, Screen.height), bite12);
+			}
 		}
+		
 
 	}
 	void player1Died(){
@@ -67,23 +148,23 @@ public class respawnPlayerScript : MonoBehaviour {
 	
 	void Update(){
 		if (player1dead){
-			player1Relocate();
 			player1Counter = player1Counter + Time.deltaTime;
 			//print (player1Counter);
 			if (player1Counter > 5){
-				//print ("hihihi");
+				print ("hihihi");
+				player1Relocate();
 				player1Respawn();
 				enemyTargetTracker.PLAYER_ONE_DEAD = false;
 				player1Counter = 0;
 			}
 		}
 		if(player2dead){
-			player2Relocate();
 			player2Counter = player2Counter + Time.deltaTime;
 			//print (player2Counter);
 			if (player2Counter > 5){
 				//print ("hihihi");
 				player2Respawn();
+				player2Relocate();
 				enemyTargetTracker.PLAYER_TWO_DEAD = false;
 				player2Counter = 0;
 			}

@@ -1,8 +1,13 @@
-var speed : int = 10;
+var speed : int = 8;
 
 function FixedUpdate () {
 	var controller : CharacterController = GetComponent(CharacterController);
 	var HDir = Vector3.zero;
+	if ( Input.GetButton("Sprint")){
+		speed = 15;
+		Debug.Log ("i can sprint now");
+	}
+	else { speed = 8;}
 	if (Input.GetKey (KeyCode.UpArrow) || Input.GetKey(KeyCode.W)){
 		HDir = this.transform.forward;
 		HDir.y = 0;

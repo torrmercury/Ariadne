@@ -1,3 +1,4 @@
+ 
 var xSpeed = 250.0;
 var ySpeed = 120.0;
 var speed : int = 5;
@@ -30,6 +31,8 @@ function LateUpdate () {
 }
 
 function Update () {
+	
+
 
 	if (!enemyTargetTracker.PLAYER_ONE_DEAD){
 		var controller : CharacterController = GetComponent(CharacterController);
