@@ -29,7 +29,7 @@ function LateUpdate () {
 }
 
 function Update () {
-	if (Input.GetButton("Joy Sprint1")){
+	if (Input.GetButton("Joy Sprint2")){
 		speed = 35;
 	} else{
 		speed = 20;
