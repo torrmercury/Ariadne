@@ -29,8 +29,13 @@ function LateUpdate () {
 }
 
 function Update () {
+<<<<<<< HEAD
 	if (Input.GetButton("Joy Sprint2")){
 		speed = 40;
+=======
+	if (Input.GetButton("Joy Sprint1")){
+		speed = 35;
+>>>>>>> project input fixed, adjusted keyboardmotor for testing(sprint with spacebar)
 	} else{
 		speed = 20;
 	}

@@ -6,9 +6,9 @@ var player1: Transform;
 var player2: Transform;
 
 function Update (){
-	//if ( counter++ > 300){
+	if ( counter++ > 300){
    		follow();
-   //	}
+   	}
 }
  
 

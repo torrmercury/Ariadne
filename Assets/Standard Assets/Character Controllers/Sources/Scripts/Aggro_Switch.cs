@@ -23,7 +23,7 @@ public class Aggro_Switch : MonoBehaviour {
 			//switchSound = AudioSource.audio.Play();
 			Debug.Log ("YOOOO");
 			enemy.SendMessage("changeTarget");
-			goal.SendMessage("targetChanged");
+			//goal.SendMessage("targetChanged");
 			Destroy(gameObject);
 		}
 	}
