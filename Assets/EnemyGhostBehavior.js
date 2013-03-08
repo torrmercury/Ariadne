@@ -1,5 +1,5 @@
 
-var moveSpeed = 27.5;
+var moveSpeed = 2.0;
 var damping = 6.0;
 var counter = 0;
 var player1: Transform;

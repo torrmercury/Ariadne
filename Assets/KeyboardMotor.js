@@ -3,17 +3,11 @@ var speed : int = 20;
 function FixedUpdate () {
 	var controller : CharacterController = GetComponent(CharacterController);
 	var HDir = Vector3.zero;
-<<<<<<< HEAD
-	if (Input.GetButton("Joy Sprint1")){
-		speed = 40;
-	} else{
-		speed = 20;
-=======
 	if ( Input.GetKey(KeyCode.Space)){
 		speed = 35;
 		Debug.Log ("i can sprint now");
->>>>>>> project input fixed, adjusted keyboardmotor for testing(sprint with spacebar)
 	}
+	else { speed = 8;}
 	if (Input.GetKey (KeyCode.UpArrow) || Input.GetKey(KeyCode.W)){
 		HDir = this.transform.forward;
 		HDir.y = 0;
