@@ -23,7 +23,7 @@ Time.deltaTime * smooth);
 }
 
 if(enter == true){
-if(Input.GetKeyDown("f") || Input.GetButtonDown("Joy Door")){
+if(Input.GetKeyDown("f") || Input.GetButtonDown("Joy Door") || Input.GetButtonDown("Joy Door Alt")){
 open = !open;
 }
 }
