@@ -2,7 +2,8 @@
 
 var player1: Transform;
 var player2: Transform;
-var speed = 10;
+var speed = 18;
+var wallbuffer = 0;
 
 function Start () {
 
@@ -16,6 +17,7 @@ function Update () {
  	var hit2 = false;
  	var hitDistance1 = Vector3.zero.magnitude;
  	var hitDistance2 = Vector3.zero.magnitude;
+ 	var hitDistanceWall = Vector3.zero.magnitude;
  	var controller : CharacterController = GetComponent(CharacterController);
  	
  	
@@ -33,18 +35,26 @@ function Update () {
             hitDistance2 = Vector3.Distance(player2.position, transform.position);
         }
     }
+    if (Physics.Raycast(transform.position, transform.forward, hit)){
+    	Debug.Log("HIT 2");
+            hitDistanceWall = Vector3.Distance(player2.position, transform.position);
+    }
     
+    var moveDirection = Vector3.zero;
     if(hit1){
     	if(hit2){
     		if(hitDistance1 < hitDistance2){
-    			controller.Move((player1.position - transform.position).normalized * Time.deltaTime * speed);
+    			moveDirection = (player1.position - transform.position);
     		} else{
-    			controller.Move((player2.position - transform.position).normalized * Time.deltaTime * speed);
+    			moveDirection = (player2.position - transform.position);
     		}
     	} else{
-    		controller.Move((player1.position - transform.position).normalized * Time.deltaTime * speed);
+    		moveDirection = (player1.position - transform.position);
     	}
     }else if(hit2){
-    	controller.Move((player2.position - transform.position).normalized * Time.deltaTime * speed);
-    } 
+    	moveDirection = (player2.position - transform.position);
+    }else if(hitDistanceWall){
+    }
+    
+    controller.Move(moveDirection.normalized * Time.deltaTime * speed);
 }
