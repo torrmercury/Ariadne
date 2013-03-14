@@ -1,6 +1,7 @@
 # Ignore The following directories / file extensions
 Library
 Temp
+
 *.DS_Store
 *.csproj
 *.unityproj
