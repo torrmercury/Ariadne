@@ -5,7 +5,7 @@ function FixedUpdate () {
 	var HDir = Vector3.zero;
 	if ( Input.GetKey(KeyCode.Space)){
 		speed = 35;
-		Debug.Log ("i can sprint now");
+		//Debug.Log ("i can sprint now");
 	}
 	else { speed = 8;}
 	if (Input.GetKey (KeyCode.UpArrow) || Input.GetKey(KeyCode.W)){
