@@ -55,6 +55,7 @@
      <Compile Include="Assets\Scripts Folder\enemyHUD.cs" />
      <Compile Include="Assets\Scripts Folder\playerBackpack.cs" />
      <Compile Include="Assets\Scripts Folder\weGotAWinner.cs" />
+     <Compile Include="Assets\goalHUD.cs" />
      <None Include="Assets\Hard Surface Free\HardSurface Shaders\HardSurfacePro Hidden Front Cut Out Specular.shader" />
      <None Include="Assets\Hard Surface Free\HardSurface Shaders\HardSurface Free Cut Out Opaque Bump.shader" />
      <None Include="Assets\Hard Surface Free\HardSurface Shaders\HardSurfacePro Hidden Front Transparent.shader" />
