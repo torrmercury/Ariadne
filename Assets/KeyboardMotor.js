@@ -34,7 +34,9 @@ function FixedUpdate () {
 		HDir.y = 0;
 		controller.Move(HDir.normalized * Time.deltaTime*speed);
 	}
-	
+}
+
+function Update () {
 	var flashlight : Light;
 	flashlight = this.transform.Find("Main Camera").Find("Spotlight").GetComponent("Light");
 	if (Input.GetKeyDown(KeyCode.E)) {

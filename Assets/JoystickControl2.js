@@ -45,4 +45,14 @@ function Update () {
 		CombinedDir.y = 0;
 		controller.Move(CombinedDir.normalized * Time.deltaTime * speed);
 	}
+	
+	
+	var flashlight : Light;
+	flashlight = this.transform.Find("Main Camera").Find("Spotlight").GetComponent("Light");
+	
+	//CHANGE to reflect controller input
+	if (Input.GetKeyDown(KeyCode.E)) {
+		flashLightOn = !flashLightOn;
+		flashlight.enabled = !flashlight.enabled;
+	}
 }
