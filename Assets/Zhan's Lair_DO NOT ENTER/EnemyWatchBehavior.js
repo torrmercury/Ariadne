@@ -3,11 +3,15 @@
 var player1: Transform;
 var player2: Transform;
 var speed = 18;
+var chaseRange = 20; // will chase player regardless of flashlight within this range
 var wallBuffer = 7.0;
 var damping = 6.0;
 
+private var playerLight1 : Light;
+private var playerLight2 : Light;
 function Start () {
-
+	playerLight1 = player1.Find("Main Camera").Find("Spotlight").GetComponent("Light");
+	playerLight2 = player2.Find("Main Camera").Find("Spotlight").GetComponent("Light");
 }
 
 function Update () {
@@ -27,23 +31,28 @@ function Update () {
  	
  	var controller : CharacterController = GetComponent(CharacterController);
  	
- 	if(player1.GetComponent(KeyboardMotor).flashLightOn){
-	    if (Physics.Raycast(transform.position, rayDirection1, hit)) {
-	        if (hit.transform == player1) {
+    if (Physics.Raycast(transform.position, rayDirection1, hit)) {
+        if (hit.transform == player1) {
+	    	//Debug.Log("HIT 1");
+	        hitDistance1 = Vector3.Distance(player1.position, transform.position);
+            if(hitDistance1 < chaseRange || playerLight1.enabled){
 	    		hit1 = true;
-	    		//Debug.Log("HIT 1");
-	            hitDistance1 = Vector3.Distance(player1.position, transform.position);
-	        }
-	    }
+		    } else{
+		    	hitDistance1 = 9999.99;
+		    }
+        }
     }
- 	if(player2.GetComponent(KeyboardMotor).flashLightOn){
-	    if (Physics.Raycast(transform.position, rayDirection2, hit)) {
-	        if (hit.transform == player2) {
-		    	hit2 = true;
-		    	//Debug.Log("HIT 2");
-	            hitDistance2 = Vector3.Distance(player2.position, transform.position);
-	        }
-	    }
+    
+    if (Physics.Raycast(transform.position, rayDirection2, hit)) {
+        if (hit.transform == player2) {
+	    	//Debug.Log("HIT 2");
+            hitDistance2 = Vector3.Distance(player2.position, transform.position);
+        	if(hitDistance2 < chaseRange || playerLight2.enabled){
+	    		hit2 = true;
+	    	} else{
+	    		hitDistance2 = 9999.99;
+	    	}
+        }
     }
     if (Physics.Raycast(transform.position, transform.forward, hit)){
     	if (hit.transform != player1 && hit.transform != player2){

@@ -6,7 +6,11 @@ var speed : int = 20;
 private var x = 0.0;
 private var y = 0.0;
 
+private var flashlight : Light;
+
 function Start () {
+	flashlight = this.transform.Find("Main Camera").Find("Spotlight").GetComponent("Light");
+	
     var angles = transform.eulerAngles;
     x = angles.y;
     y = angles.x;
@@ -46,6 +50,7 @@ function Update () {
 		controller.Move(CombinedDir.normalized * Time.deltaTime * speed);
 	}
 	
+<<<<<<< HEAD
 	
 	var flashlight : Light;
 	flashlight = this.transform.Find("Main Camera").Find("Spotlight").GetComponent("Light");
@@ -53,6 +58,10 @@ function Update () {
 	//CHANGE to reflect controller input
 	if (Input.GetKeyDown(KeyCode.E)) {
 		flashLightOn = !flashLightOn;
+=======
+	//CHANGE to reflect actual input
+	if (Input.GetKeyDown(KeyCode.E)) {
+>>>>>>> enemy now chases player in close range with flashlight off
 		flashlight.enabled = !flashlight.enabled;
 	}
 }

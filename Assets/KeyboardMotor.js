@@ -1,5 +1,9 @@
 var speed : int = 20;
-var flashLightOn = true;
+private var flashlight : Light;
+
+function Start () {
+	flashlight = this.transform.Find("Main Camera").Find("Spotlight").GetComponent("Light");
+}
 
 function FixedUpdate () {
 	var controller : CharacterController = GetComponent(CharacterController);
@@ -37,10 +41,12 @@ function FixedUpdate () {
 }
 
 function Update () {
+<<<<<<< HEAD
 	var flashlight : Light;
 	flashlight = this.transform.Find("Main Camera").Find("Spotlight").GetComponent("Light");
+=======
+>>>>>>> enemy now chases player in close range with flashlight off
 	if (Input.GetKeyDown(KeyCode.E)) {
-		flashLightOn = !flashLightOn;
 		flashlight.enabled = !flashlight.enabled;
 	}
 }
