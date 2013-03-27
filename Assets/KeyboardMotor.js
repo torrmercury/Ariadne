@@ -1,4 +1,5 @@
 var speed : int = 20;
+var flashLightOn = true;
 
 function FixedUpdate () {
 	var controller : CharacterController = GetComponent(CharacterController);
@@ -32,5 +33,12 @@ function FixedUpdate () {
 		HDir = this.transform.right;
 		HDir.y = 0;
 		controller.Move(HDir.normalized * Time.deltaTime*speed);
+	}
+	
+	var flashlight : Light;
+	flashlight = this.transform.Find("Main Camera").Find("Spotlight").GetComponent("Light");
+	if (Input.GetKeyDown(KeyCode.E)) {
+		flashLightOn = !flashLightOn;
+		flashlight.enabled = !flashlight.enabled;
 	}
 }

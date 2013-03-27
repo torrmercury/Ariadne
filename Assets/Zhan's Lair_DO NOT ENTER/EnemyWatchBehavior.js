@@ -27,20 +27,23 @@ function Update () {
  	
  	var controller : CharacterController = GetComponent(CharacterController);
  	
- 	
-    if (Physics.Raycast(transform.position, rayDirection1, hit)) {
-        if (hit.transform == player1) {
-    		hit1 = true;
-    		//Debug.Log("HIT 1");
-            hitDistance1 = Vector3.Distance(player1.position, transform.position);
-        }
+ 	if(player1.GetComponent(KeyboardMotor).flashLightOn){
+	    if (Physics.Raycast(transform.position, rayDirection1, hit)) {
+	        if (hit.transform == player1) {
+	    		hit1 = true;
+	    		//Debug.Log("HIT 1");
+	            hitDistance1 = Vector3.Distance(player1.position, transform.position);
+	        }
+	    }
     }
-    if (Physics.Raycast(transform.position, rayDirection2, hit)) {
-        if (hit.transform == player2) {
-	    	hit2 = true;
-	    	//Debug.Log("HIT 2");
-            hitDistance2 = Vector3.Distance(player2.position, transform.position);
-        }
+ 	if(player2.GetComponent(KeyboardMotor).flashLightOn){
+	    if (Physics.Raycast(transform.position, rayDirection2, hit)) {
+	        if (hit.transform == player2) {
+		    	hit2 = true;
+		    	//Debug.Log("HIT 2");
+	            hitDistance2 = Vector3.Distance(player2.position, transform.position);
+	        }
+	    }
     }
     if (Physics.Raycast(transform.position, transform.forward, hit)){
     	if (hit.transform != player1 && hit.transform != player2){
@@ -59,6 +62,7 @@ function Update () {
     if (Physics.Raycast(transform.position, Vector3(1,0,0), hit)){
             hitDistanceEast = Vector3.Distance(hit.point, transform.position);
     }
+    //Debug.Log("N:" + hitDistanceNorth + " S:" + hitDistanceSouth + " W:" + hitDistanceWest + " E:" + hitDistanceEast);
     
     
     /*	1:chase closest player
@@ -81,21 +85,41 @@ function Update () {
     }else if(hitDistanceForward > wallBuffer){
     	moveDirection = transform.forward;
     }else{
-    	var randomnum = Random.Range(0,4);
-    	switch(randomnum){
-    		case 0:
-    			moveDirection = Vector3(1,0,0);
-    			break;
-    		case 1:
-    			moveDirection = Vector3(-1,0,0);
-    			break;
-    		case 2:
-    			moveDirection = Vector3(0,0,1);
-    			break;
-    		case 3:
-    			moveDirection = Vector3(0,0,-1);
-    			break;
+    	var randomnum = -1;
+    	while(randomnum < 0){
+    		randomnum = Random.Range(0,4);
+    		switch(randomnum){
+	    		case 0:
+	    			if(hitDistanceNorth < wallBuffer){
+	    				randomnum = -1;
+	    			} else{
+	    				moveDirection = Vector3(0,0,1);
+	    			}
+	    			break;
+	    		case 1:
+	    			if(hitDistanceSouth < wallBuffer){
+	    				randomnum = -1;
+	    			} else{
+	    				moveDirection = Vector3(0,0,-1);
+	    			}
+	    			break;
+	    		case 2:
+	    			if(hitDistanceEast < wallBuffer){
+	    				randomnum = -1;
+	    			} else{
+	    				moveDirection = Vector3(1,0,0);
+	    			}
+	    			break;
+	    		case 3:
+	    			if(hitDistanceWest < wallBuffer){
+	    				randomnum = -1;
+	    			} else{
+	    				moveDirection = Vector3(-1,0,0);
+	    			}
+	    			break;
+    		}
     	}
+    	//Debug.Log(randomnum);
     }
     
     //remove x or z component if moving too close to a wall
@@ -119,7 +143,6 @@ function Update () {
     
     //Debug.Log(moveDirection);
     transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(moveDirection), Time.deltaTime * damping);
-    
     controller.Move(moveDirection.normalized * Time.deltaTime * speed);
     
     //hit detection based on distance
@@ -128,4 +151,5 @@ function Update () {
 	}else if(hit2 && hitDistance2 < 5.0){
 		Debug.Log("player 2 collision");
 	}
+	
 }
