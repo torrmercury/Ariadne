@@ -41,11 +41,6 @@ function FixedUpdate () {
 }
 
 function Update () {
-<<<<<<< HEAD
-	var flashlight : Light;
-	flashlight = this.transform.Find("Main Camera").Find("Spotlight").GetComponent("Light");
-=======
->>>>>>> enemy now chases player in close range with flashlight off
 	if (Input.GetKeyDown(KeyCode.E)) {
 		flashlight.enabled = !flashlight.enabled;
 	}

@@ -53,18 +53,8 @@ function Update () {
 		controller.Move(CombinedDir.normalized * Time.deltaTime * speed);
 	}
 	
-<<<<<<< HEAD
-	
-	var flashlight : Light;
-	flashlight = this.transform.Find("Main Camera").Find("Spotlight").GetComponent("Light");
-	
 	//CHANGE to reflect controller input
 	if (Input.GetKeyDown(KeyCode.E)) {
-		flashLightOn = !flashLightOn;
-=======
-	//CHANGE to reflect actual input
-	if (Input.GetKeyDown(KeyCode.E)) {
->>>>>>> enemy now chases player in close range with flashlight off
 		flashlight.enabled = !flashlight.enabled;
 	}
 }
