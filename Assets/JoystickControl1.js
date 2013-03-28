@@ -37,7 +37,7 @@ function LateUpdate () {
 
 function Update () {
 	//Debug.Log(Input.GetAxis("Sprint"));
-	if (Input.GetButton("Joy Sprint1") || Input.GetButton("Joy Sprint1 Alt")){
+	if (Input.GetButton("Joy Sprint1")){
 		speed = 35;
 	} else{
 		speed = 20;
@@ -54,7 +54,7 @@ function Update () {
 		controller.Move(CombinedDir.normalized * Time.deltaTime * speed);
 	}
 	
-	if ( Input.GetButton ("deployThread")){
+	if ( Input.GetButton ("deployThread1")){
 		//createThread
 		//Debug.Log("hizzhere");
 		//drop chain links

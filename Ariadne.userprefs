@@ -1,17 +1,18 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/JoystickControl2.js">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts Folder/Door_Open.js">
     <Files>
-      <File FileName="Assets/goalHUD.cs" Line="1" Column="1" />
+      <File FileName="Assets/goalHUD.cs" Line="32" Column="4" />
       <File FileName="Assets/Standard Assets/Character Controllers/Sources/Scripts/SmoothLookAt.js" Line="1" Column="1" />
       <File FileName="Assets/Standard Assets/enemyTargetTracker.cs" Line="1" Column="1" />
-      <File FileName="Assets/Standard Assets/Character Controllers/Sources/Scripts/Aggro_Switch.cs" Line="1" Column="1" />
+      <File FileName="Assets/Standard Assets/Character Controllers/Sources/Scripts/Aggro_Switch.cs" Line="27" Column="5" />
       <File FileName="Assets/Scripts Folder/DoorSwitch.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts Folder/playerBackpack.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts Folder/DoorScript1.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts Folder/Door_Open.js" Line="1" Column="1" />
-      <File FileName="Assets/JoystickControl1.js" Line="1" Column="1" />
-      <File FileName="Assets/JoystickControl2.js" Line="1" Column="20" />
+      <File FileName="Assets/Scripts Folder/Door_Open.js" Line="28" Column="14" />
+      <File FileName="Assets/JoystickControl1.js" Line="22" Column="50" />
+      <File FileName="Assets/JoystickControl2.js" Line="60" Column="21" />
+      <File FileName="Assets/KeyboardMotor.js" Line="2" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
