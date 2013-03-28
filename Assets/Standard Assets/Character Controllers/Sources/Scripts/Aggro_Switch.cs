@@ -18,13 +18,15 @@ public class Aggro_Switch : MonoBehaviour {
 	void Update () {
 		
 	}
-	public void OnTriggerEnter(Collider other){
+	public void OnTriggerStay(Collider other){
 		if (player1 == other.gameObject || player2 == other.gameObject){
 			//switchSound = AudioSource.audio.Play();
+			if ( Input.GetButton("activateSwitch") ){
 			Debug.Log ("YOOOO");
-			enemy.SendMessage("changeTarget");
-			//goal.SendMessage("targetChanged");
-			Destroy(gameObject);
+				enemy.SendMessage("changeTarget");
+				goal.SendMessage("targetChanged");
+				Destroy(gameObject);
+			}
 		}
 	}
 }

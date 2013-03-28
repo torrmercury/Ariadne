@@ -3,22 +3,23 @@ var xSpeed = 250.0;
 var ySpeed = 120.0;
 var goal: Transform;
 var speed : int = 20;
+var chainLinkPrefab: Transform;
+var maxChainLink = 200;
+private var flashlight : Light;
 
 private var x = 0.0;
 private var y = 0.0;
-
-private var flashlight : Light;
-
+ 
 function Start () {
-	flashlight = this.transform.Find("Main Camera").Find("Spotlight").GetComponent("Light");
-	
     var angles = transform.eulerAngles;
     x = angles.y;
     y = angles.x;
  
     // Make the rigid body not change rotation
-    if (rigidbody)
+    if (rigidbody){
         rigidbody.freezeRotation = true;
+        }
+    flashlight = this.transform.Find("Main Camera").Find("Spotlight").GetComponent("Light");
 }
  
 function LateUpdate () {
@@ -53,8 +54,16 @@ function Update () {
 		controller.Move(CombinedDir.normalized * Time.deltaTime * speed);
 	}
 	
-	//CHANGE to reflect controller input
-	if (Input.GetKeyDown(KeyCode.E)) {
+	if ( Input.GetButton ("deployThread")){
+		//createThread
+		//Debug.Log("hizzhere");
+		//drop chain links
+		//Rigidbody chainLink;
+       // chainLink = Instantiate(chainLinkPrefab, transform.position, transform.rotation) as Rigidbody;
+       Instantiate (chainLinkPrefab, this.transform.position, Quaternion.identity);
+  
+	}
+	if (Input.GetButtonDown("flashlightOn")) {
 		flashlight.enabled = !flashlight.enabled;
 	}
 }

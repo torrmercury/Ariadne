@@ -4,6 +4,7 @@ var DoorOpenAngle = 90.0;
 var DoorCloseAngle = 0.0;
 var open : boolean;
 var enter : boolean;
+private var playernum = 0;
 
 //Main function
 function Update (){
@@ -23,7 +24,7 @@ Time.deltaTime * smooth);
 }
 
 if(enter == true){
-if(Input.GetKeyDown("f") || Input.GetButtonDown("Joy Door") || Input.GetButtonDown("Joy Door Alt")){
+if(Input.GetKeyDown("f") || (Input.GetButtonDown("Joy Door1") && playernum == 1) || (Input.GetButtonDown("Joy Door2") && playernum == 2)){
 open = !open;
 }
 }
@@ -32,8 +33,13 @@ open = !open;
 //Activate the Main function when player is near the door
 function OnTriggerEnter (other : Collider){
 
-if (other.gameObject.tag == "Player1" || other.gameObject.tag == "Player2") {
-(enter) = true;
+if (other.gameObject.tag == "Player1") {
+	(enter) = true;
+	playernum = 1;
+}
+if (other.gameObject.tag == "Player2") {
+	(enter) = true;
+	playernum = 2;
 }
 }
 
@@ -41,7 +47,8 @@ if (other.gameObject.tag == "Player1" || other.gameObject.tag == "Player2") {
 function OnTriggerExit (other : Collider){
 
 if (other.gameObject.tag == "Player1" || other.gameObject.tag == "Player2") {
-(enter) = false;
+	(enter) = false;
+	playernum = 0;
 }
 }
 //@youtube.com/user/maksimum654321
