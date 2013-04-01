@@ -2,6 +2,7 @@ var speed : int = 20;
 private var flashlight : Light;
 
 function Start () {
+	
 	flashlight = this.transform.Find("Main Camera").Find("Spotlight").GetComponent("Light");
 }
 

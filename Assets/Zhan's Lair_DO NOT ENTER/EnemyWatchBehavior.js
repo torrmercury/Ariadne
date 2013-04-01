@@ -9,9 +9,14 @@ var damping = 6.0;
 
 private var playerLight1 : Light;
 private var playerLight2 : Light;
+private var playerSpawnPoint1 : UnityEngine.Vector3;
+private var playerSpawnPoint2 : UnityEngine.Vector3;
+
 function Start () {
 	playerLight1 = player1.Find("Main Camera").Find("Spotlight").GetComponent("Light");
 	playerLight2 = player2.Find("Main Camera").Find("Spotlight").GetComponent("Light");
+	playerSpawnPoint1 = player1.position;
+	playerSpawnPoint2 = player2.position;
 }
 
 function Update () {
@@ -156,8 +161,10 @@ function Update () {
     
     //hit detection based on distance
     if(hit1 && hitDistance1 < 5.0){
+		player1.position = playerSpawnPoint1;
 		Debug.Log("player 1 collision");
 	}else if(hit2 && hitDistance2 < 5.0){
+		player2.position = playerSpawnPoint2;
 		Debug.Log("player 2 collision");
 	}
 	

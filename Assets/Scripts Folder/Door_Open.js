@@ -24,7 +24,7 @@ Time.deltaTime * smooth);
 }
 
 if(enter == true){
-if(Input.GetKeyDown("f") || (Input.GetButtonDown("Joy Door1") && playernum == 1) || (Input.GetButtonDown("Joy Door2") && playernum == 2)){
+if(Input.GetKeyDown(KeyCode.F) || (Input.GetButtonDown("Joy Door1") && playernum == 1) || (Input.GetButtonDown("Joy Door2") && playernum == 2)){
 open = !open;
 }
 }

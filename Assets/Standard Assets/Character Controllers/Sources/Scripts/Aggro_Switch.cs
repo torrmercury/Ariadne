@@ -19,14 +19,11 @@ public class Aggro_Switch : MonoBehaviour {
 		
 	}
 	public void OnTriggerStay(Collider other){
-		if (player1 == other.gameObject || player2 == other.gameObject){
-			//switchSound = AudioSource.audio.Play();
-			if ( Input.GetButton("activateSwitch") ){
-			Debug.Log ("YOOOO");
-				enemy.SendMessage("changeTarget");
-				goal.SendMessage("targetChanged");
-				Destroy(gameObject);
-			}
+		if ((player1 == other.gameObject && Input.GetButton("activateSwitch1")) || (player2 == other.gameObject && Input.GetButton("activateSwitch2")) || Input.GetKeyDown(KeyCode.R)){
+			//Debug.Log ("YOOOO");
+			enemy.SendMessage("changeTarget");
+			goal.SendMessage("targetChanged");
+			Destroy(gameObject);
 		}
 	}
 }
