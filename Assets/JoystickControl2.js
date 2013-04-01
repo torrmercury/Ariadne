@@ -21,8 +21,8 @@ function Start () {
 function LateUpdate () {
 
 		if (!enemyTargetTracker.PLAYER_TWO_DEAD){ 
-		    x += Input.GetAxis("Joy X2") * xSpeed * 0.02;
-		    y += Input.GetAxis("Joy Y2") * ySpeed * 0.02;
+		    x += Input.GetAxis("JoyLeftStickH2") * xSpeed * 0.02;
+		    y += Input.GetAxis("JoyLeftStickV2") * ySpeed * 0.02;
 		
 		    var rotation = Quaternion.Euler(y, x, 0);
 		
@@ -43,7 +43,7 @@ function Update () {
 		
 		ForwardDir = this.transform.forward;
 		RightDir = this.transform.right;
-		CombinedDir = ForwardDir * Input.GetAxis("Joy V2") * -1 + RightDir * Input.GetAxis("Joy H2");
+		CombinedDir = ForwardDir * Input.GetAxis("JoyRightStickV2") * -1 + RightDir * Input.GetAxis("JoyRightStickH2");
 		CombinedDir.y = 0;
 		controller.Move(CombinedDir.normalized * Time.deltaTime * speed);
 	}

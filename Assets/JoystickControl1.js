@@ -28,8 +28,8 @@ function LateUpdate () {
 		//javascript script must be outside of the standard assets folder.
 		if (!enemyTargetTracker.PLAYER_ONE_DEAD){ 
  			
-       		x += Input.GetAxis("Joy X") * xSpeed * 0.02;
-        	y += Input.GetAxis("Joy Y") * ySpeed * 0.02;
+       		x += Input.GetAxis("JoyLeftStickH1") * xSpeed * 0.02;
+        	y += Input.GetAxis("JoyLeftStickV1") * ySpeed * 0.02;
         	var rotation = Quaternion.Euler(y, x, 0);
         	transform.rotation = rotation;
         }
@@ -49,7 +49,7 @@ function Update () {
 		
 		ForwardDir = this.transform.forward;
 		RightDir = this.transform.right;
-		CombinedDir = ForwardDir * Input.GetAxis("Joy V") + RightDir * Input.GetAxis("Joy H");
+		CombinedDir = ForwardDir * Input.GetAxis("JoyRightStickV1") + RightDir * Input.GetAxis("JoyRightStickH1");
 		CombinedDir.y = 0;
 		controller.Move(CombinedDir.normalized * Time.deltaTime * speed);
 	}
