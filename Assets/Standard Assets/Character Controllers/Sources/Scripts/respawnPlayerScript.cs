@@ -23,21 +23,19 @@ public class respawnPlayerScript : MonoBehaviour {
 	public Texture2D bite12;
 	
 	//start positions
-	public Transform startp1;
-	public Transform startp2;
+	public Vector3 startp1;
+	public Vector3 startp2;
 	
 	//variables for within
 	bool player1dead = false;
 	bool player2dead = false;
 	float player1Counter = 0;
 	float player2Counter = 0;
-	Rigidbody p1rigid ;
-	Rigidbody p2rigid ;
 	
 	
 	//p1 go back to start position 
 	void player1Relocate(){
-		player1.transform.position = Vector3.Lerp(this.transform.position, startp1.position, Time.time);
+		player1.transform.position = startp1;
 	}
 	//p1 now alive
 	void player1Respawn(){
@@ -46,8 +44,7 @@ public class respawnPlayerScript : MonoBehaviour {
 	
 	//p2 go back to start
 	void player2Relocate(){
-		player2.transform.position = Vector3.Lerp(this.transform.position, startp2.position, Time.time);
-		
+		player2.transform.position = startp2;
 	}
 	//p2 back alive
 	void player2Respawn(){
@@ -92,7 +89,6 @@ public class respawnPlayerScript : MonoBehaviour {
 			if  (player1Counter > 2.2){
 				GUI.DrawTexture(new Rect(0f, (.52f*Screen.width)-(.48f * Screen.width), Screen.width*.48f, Screen.height), bite12);
 			}
-			
 			
 		}
 		if (player2dead){
@@ -151,7 +147,7 @@ public class respawnPlayerScript : MonoBehaviour {
 			player1Counter = player1Counter + Time.deltaTime;
 			//print (player1Counter);
 			if (player1Counter > 5){
-				print ("hihihi");
+				//print ("hihihi");
 				player1Relocate();
 				player1Respawn();
 				enemyTargetTracker.PLAYER_ONE_DEAD = false;
@@ -171,8 +167,8 @@ public class respawnPlayerScript : MonoBehaviour {
 		}
 	}
 	void Start(){
-		p1rigid = player1.rigidbody;
-		p2rigid = player2.rigidbody;
+        startp1 = player1.transform.position;
+		startp2 = player2.transform.position;
 	}
 	
 	
