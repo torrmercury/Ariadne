@@ -1,8 +1,9 @@
 var speed : int = 20;
 private var flashlight : Light;
+private var pointlight : Light;
 
 function Start () {
-	
+	pointlight = this.transform.Find("Main Camera").Find("Point light").GetComponent("Light");
 	flashlight = this.transform.Find("Main Camera").Find("Spotlight").GetComponent("Light");
 }
 
@@ -44,5 +45,6 @@ function FixedUpdate () {
 function Update () {
 	if (Input.GetKeyDown(KeyCode.E)) {
 		flashlight.enabled = !flashlight.enabled;
+		pointlight.enabled = !pointlight.enabled;
 	}
 }

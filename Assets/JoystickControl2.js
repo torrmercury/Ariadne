@@ -6,12 +6,14 @@ var chainLinkPrefab: Transform;
 private var x = 0.0;
 private var y = 0.0;
 private var flashlight : Light;
+private var pointlight : Light;
 
 function Start () {
     var angles = transform.eulerAngles;
     x = angles.y;
     y = angles.x;
     flashlight = this.transform.Find("Main Camera").Find("Spotlight").GetComponent("Light");
+	pointlight = this.transform.Find("Main Camera").Find("Point light").GetComponent("Light");
  
     // Make the rigid body not change rotation
     if (rigidbody)
@@ -58,5 +60,6 @@ function Update () {
 	}
 	if (Input.GetButtonDown("flashlightOn2")) {
 		flashlight.enabled = !flashlight.enabled;
+		pointlight.enabled = !pointlight.enabled;
 	}
 }

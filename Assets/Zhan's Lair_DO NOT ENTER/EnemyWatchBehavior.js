@@ -158,11 +158,14 @@ function Update () {
     
     //hit detection based on distance
     if(hit1 && hitDistance1 < 5.0){
+		this.transform.Find("demon").animation.CrossFade("demonattack");
 		Debug.Log("player 1 collision");
 		goal.SendMessage("player1Died");
 	}else if(hit2 && hitDistance2 < 5.0){
+		this.transform.Find("demon").animation.CrossFade("demonattack");
 		Debug.Log("player 2 collision");
 		goal.SendMessage("player2Died");
+	}else{
+		this.transform.Find("demon").animation.CrossFade("demonwalk");
 	}
-	
 }

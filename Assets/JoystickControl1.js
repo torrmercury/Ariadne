@@ -6,6 +6,7 @@ var speed : int = 20;
 var chainLinkPrefab: Transform;
 var maxChainLink = 200;
 private var flashlight : Light;
+private var pointlight : Light;
 
 private var x = 0.0;
 private var y = 0.0;
@@ -20,6 +21,7 @@ function Start () {
         rigidbody.freezeRotation = true;
         }
     flashlight = this.transform.Find("Main Camera").Find("Spotlight").GetComponent("Light");
+	pointlight = this.transform.Find("Main Camera").Find("Point light").GetComponent("Light");
 }
  
 function LateUpdate () {
@@ -65,5 +67,6 @@ function Update () {
 	}
 	if (Input.GetButtonDown("flashlightOn")) {
 		flashlight.enabled = !flashlight.enabled;
+		pointlight.enabled = !pointlight.enabled;
 	}
 }
