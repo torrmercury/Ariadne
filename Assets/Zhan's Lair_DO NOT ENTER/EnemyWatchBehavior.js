@@ -10,10 +10,16 @@ var damping = 6.0;
 
 private var playerLight1 : Light;
 private var playerLight2 : Light;
+private var selfRespawnPoint;
+private var selfRespawnRotation;
+private var selfRespawning;
 
 function Start () {
 	playerLight1 = player1.Find("Main Camera").Find("Spotlight").GetComponent("Light");
 	playerLight2 = player2.Find("Main Camera").Find("Spotlight").GetComponent("Light");
+	selfRespawnPoint = this.transform.position;
+	selfRespawnRotation = this.transform.localRotation;
+	selfRespawning = false;
 }
 
 function Update () {
@@ -161,11 +167,25 @@ function Update () {
 		this.transform.Find("demon").animation.CrossFade("demonattack");
 		Debug.Log("player 1 collision");
 		goal.SendMessage("player1Died");
+		if(!selfRespawning){
+			selfRespawn();
+		}
 	}else if(hit2 && hitDistance2 < 5.0){
 		this.transform.Find("demon").animation.CrossFade("demonattack");
 		Debug.Log("player 2 collision");
 		goal.SendMessage("player2Died");
+		if(!selfRespawning){
+			selfRespawn();
+		}
 	}else{
 		this.transform.Find("demon").animation.CrossFade("demonwalk");
 	}
+}
+
+function selfRespawn(){
+	selfRespawning = true;
+	yield WaitForSeconds(5);
+	this.transform.position = selfRespawnPoint;
+	this.transform.localRotation = selfRespawnRotation;
+	selfRespawning = false;
 }

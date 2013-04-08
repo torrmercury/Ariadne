@@ -1,4 +1,5 @@
 var speed : int = 20;
+var chainLinkPrefab: Transform;
 private var flashlight : Light;
 private var pointlight : Light;
 
@@ -46,5 +47,10 @@ function Update () {
 	if (Input.GetKeyDown(KeyCode.E)) {
 		flashlight.enabled = !flashlight.enabled;
 		pointlight.enabled = !pointlight.enabled;
+	}
+	if (Input.GetKey(KeyCode.Q)){
+		var threadpos = this.transform.position;
+		threadpos.y = 0;
+       	Instantiate (chainLinkPrefab, threadpos, Quaternion.identity);
 	}
 }

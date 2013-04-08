@@ -1,6 +1,5 @@
 var xSpeed = 250.0;
 var ySpeed = 120.0;
-var goal: Transform;
 var speed : int = 20;
 var chainLinkPrefab: Transform;
 private var x = 0.0;
@@ -55,7 +54,9 @@ function Update () {
 		//drop chain links
 		//Rigidbody chainLink;
        // chainLink = Instantiate(chainLinkPrefab, transform.position, transform.rotation) as Rigidbody;
-       Instantiate (chainLinkPrefab, this.transform.position, Quaternion.identity);
+		var threadpos = this.transform.position;
+		threadpos.y = 0;
+       	Instantiate (chainLinkPrefab, threadpos, Quaternion.identity);
   
 	}
 	if (Input.GetButtonDown("flashlightOn2")) {
