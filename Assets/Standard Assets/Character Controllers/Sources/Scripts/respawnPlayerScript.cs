@@ -23,8 +23,11 @@ public class respawnPlayerScript : MonoBehaviour {
 	public Texture2D bite12;
 	
 	//start positions
-	public Vector3 startp1;
-	public Vector3 startp2;
+	private Vector3 startp1;
+	private Vector3 startp2;
+	private Quaternion startrotationp1;
+	private Quaternion startrotationp2;
+	
 	
 	//variables for within
 	bool player1dead = false;
@@ -36,6 +39,7 @@ public class respawnPlayerScript : MonoBehaviour {
 	//p1 go back to start position 
 	void player1Relocate(){
 		player1.transform.position = startp1;
+		player1.transform.localRotation = startrotationp1;
 	}
 	//p1 now alive
 	void player1Respawn(){
@@ -45,6 +49,7 @@ public class respawnPlayerScript : MonoBehaviour {
 	//p2 go back to start
 	void player2Relocate(){
 		player2.transform.position = startp2;
+		player2.transform.localRotation = startrotationp2;
 	}
 	//p2 back alive
 	void player2Respawn(){
@@ -169,6 +174,9 @@ public class respawnPlayerScript : MonoBehaviour {
 	void Start(){
         startp1 = player1.transform.position;
 		startp2 = player2.transform.position;
+		startrotationp1 = player1.transform.localRotation;
+		startrotationp2 = player2.transform.localRotation;
+		
 	}
 	
 	
