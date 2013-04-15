@@ -24,9 +24,9 @@ Time.deltaTime * smooth);
 }
 
 if(enter == true){
-if(GlobalScript.player1key == 1 && (Input.GetKeyDown(KeyCode.F) || (Input.GetButtonDown("Activate1") && playernum == 1))){
+if((Input.GetKeyDown(KeyCode.F) || Input.GetButtonDown("Activate1")) && playernum == 1 && enemyTargetTracker.PLAYER1KEY == 1){
 	open = !open;
-} else if(Input.GetButtonDown("Activate2") && playernum == 2 && GlobalScript.player1key == 1){
+} else if(Input.GetButtonDown("Activate2") && playernum == 2 && enemyTargetTracker.PLAYER2KEY == 1){
 	open = !open;
 }
 }
