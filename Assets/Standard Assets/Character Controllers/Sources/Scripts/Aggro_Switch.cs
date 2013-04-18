@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
+[RequireComponent(typeof(AudioSource))]
 public class Aggro_Switch : MonoBehaviour {
 	
 	bool switched = false;
@@ -8,10 +9,8 @@ public class Aggro_Switch : MonoBehaviour {
 	public GameObject player1;
 	public GameObject player2;
 	public GameObject goal;
-	public GameObject meSwitch;
 	
 	void Start () {
-	
 	}
 	
 	// Update is called once per frame
@@ -23,11 +22,15 @@ public class Aggro_Switch : MonoBehaviour {
 			//Debug.Log ("YOOOO");
 			enemy.SendMessage("targetP2");
 	    	enemyTargetTracker.TARGET_PLAYER = 1;
-			Destroy(gameObject);
+			audio.Play();
+			gameObject.GetComponent<MeshRenderer>().enabled = false;
+			Destroy(gameObject, audio.clip.length);
 		} else if(player2 == other.gameObject && Input.GetButton("Activate2")){
 			enemy.SendMessage("targetP2");
 			enemyTargetTracker.TARGET_PLAYER = 0;
-			Destroy(gameObject);
+			audio.Play();
+			gameObject.GetComponent<MeshRenderer>().enabled = false;
+			Destroy(gameObject, audio.clip.length);
 		}
 	}
 }
