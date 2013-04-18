@@ -2,11 +2,11 @@ using UnityEngine;
 using System.Collections;
 
 public class enemyHUD : MonoBehaviour {
-	
+	/*
 	public GameObject player1;
 	public GameObject player2;
 	public Texture2D enemyPic;
-	static float sizeOfPic = (float) (.52f*Screen.width)-(.48f * Screen.width);
+	//static float sizeOfPic = (float) (.52f*Screen.width)-(.48f * Screen.width);
 	Rect enemyPicPosition;
 	float screenWidth;
 	float startMiddleBar;
@@ -49,6 +49,7 @@ public class enemyHUD : MonoBehaviour {
 		Vector3 enemyPosition = this.transform.position;
 		Vector3 playerPosition;
 		Vector3 distanceToTarget;
+		distanceToTarget = enemyPosition;
 		if (enemyTargetTracker.TARGET_PLAYER == 0){
 			playerPosition = player1.transform.position;
 		}
@@ -59,4 +60,5 @@ public class enemyHUD : MonoBehaviour {
 		return distanceToTarget;
 	
 	}
+	*/
 }
