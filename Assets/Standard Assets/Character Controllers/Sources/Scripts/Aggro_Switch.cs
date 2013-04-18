@@ -18,7 +18,7 @@ public class Aggro_Switch : MonoBehaviour {
 		
 	}
 	public void OnTriggerStay(Collider other){
-		if ((player1 == other.gameObject && Input.GetButton("Activate1")) || Input.GetKeyDown(KeyCode.R)){
+		if (player1 == other.gameObject && (Input.GetButton("Activate1") || Input.GetKeyDown(KeyCode.R))){
 			//Debug.Log ("YOOOO");
 			enemy.SendMessage("targetP2");
 	    	enemyTargetTracker.TARGET_PLAYER = 1;
