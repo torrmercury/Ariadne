@@ -24,7 +24,7 @@ function LateUpdate () {
 		if (!enemyTargetTracker.PLAYER_TWO_DEAD){ 
 		    x += Input.GetAxis("JoyLeftStickH2") * xSpeed * 0.02;
 		    y += Input.GetAxis("JoyLeftStickV2") * ySpeed * 0.02;
-		
+			y = Mathf.Clamp(y, -60F, 60F);
 		    var rotation = Quaternion.Euler(y, x, 0);
 		
 		    transform.rotation = rotation;

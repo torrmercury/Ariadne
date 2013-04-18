@@ -31,6 +31,7 @@ function LateUpdate () {
  			
        		x += Input.GetAxis("JoyLeftStickH1") * xSpeed * 0.02;
         	y += Input.GetAxis("JoyLeftStickV1") * ySpeed * 0.02;
+        	y = Mathf.Clamp(y, -60F, 60F);
         	var rotation = Quaternion.Euler(y, x, 0);
         	transform.rotation = rotation;
         }

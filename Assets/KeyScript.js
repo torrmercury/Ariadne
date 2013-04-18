@@ -12,7 +12,7 @@ function Update () {
 }
 
 function OnTriggerStay (other : Collider) {
-    if ((player1 == other.gameObject && Input.GetButton("Activate1")) || Input.GetKeyDown(KeyCode.R)){
+    if ((other.tag == "Player1" && Input.GetButton("Activate1")) || Input.GetKeyDown(KeyCode.R)){
 		if(enemyTargetTracker.PLAYER1KEY == 0){
 			Debug.Log ("P1 GOT KEY");
 			enemyTargetTracker.PLAYER1KEY = 1;
@@ -21,7 +21,7 @@ function OnTriggerStay (other : Collider) {
 			Debug.Log ("P1 GOT KEY AGAIN");
 		}
 	}
-	if (player2 == other.gameObject && Input.GetButton("Activate2")){
+	if (other.tag == "Player2" && Input.GetButton("Activate2")){
 		if(enemyTargetTracker.PLAYER2KEY == 0){
 			Debug.Log ("P2 GOT KEY");
 			enemyTargetTracker.PLAYER2KEY = 1;
