@@ -130,6 +130,7 @@ ModelImporter:
     4300000: demon
     7400000: demonwalk
     7400002: demonattack
+    7400004: demonrun
     11100000: //RootNode
     13700000: Bip001 Pelvis
     13700002: demon
@@ -171,6 +172,27 @@ ModelImporter:
       takeName: Take 001
       firstFrame: 105
       lastFrame: 130
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      transformMask: []
+    - name: demonrun
+      takeName: Take 001
+      firstFrame: 65
+      lastFrame: 83
       wrapMode: 0
       orientationOffsetY: 0
       level: 0

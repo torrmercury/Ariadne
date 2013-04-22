@@ -60,77 +60,77 @@ public class respawnPlayerScript : MonoBehaviour {
 	void OnGUI(){
 		//show blood texture on screen.
 		if ( player1dead ){
-			GUI.DrawTexture(new Rect(0f, (.52f*Screen.width)-(.48f * Screen.width), Screen.width*.48f, Screen.height), bite1);
+			GUI.DrawTexture(new Rect(0f, 0f, Screen.width*.45f, Screen.height), bite1);
 			if( player1Counter > .2){
-				GUI.DrawTexture(new Rect(0f, (.52f*Screen.width)-(.48f * Screen.width), Screen.width*.48f, Screen.height), bite2);
+				GUI.DrawTexture(new Rect(0f, 0f, Screen.width*.45f, Screen.height), bite2);
 			}
 			if( player1Counter > .4){
-				GUI.DrawTexture(new Rect(0f, (.52f*Screen.width)-(.48f * Screen.width), Screen.width*.48f, Screen.height), bite3);
+				GUI.DrawTexture(new Rect(0f, 0f, Screen.width*.45f, Screen.height), bite3);
 			}
 			if( player1Counter > .6){
-				GUI.DrawTexture(new Rect(0f, (.52f*Screen.width)-(.48f * Screen.width), Screen.width*.48f, Screen.height), bite4);
+				GUI.DrawTexture(new Rect(0f, 0f, Screen.width*.45f, Screen.height), bite4);
 			}
 			if( player1Counter > .8){
-				GUI.DrawTexture(new Rect(0f, (.52f*Screen.width)-(.48f * Screen.width), Screen.width*.48f, Screen.height), bite5);
+				GUI.DrawTexture(new Rect(0f, 0f, Screen.width*.45f, Screen.height), bite5);
 			}
 			if( player1Counter > 1.0){
-				GUI.DrawTexture(new Rect(0f, (.52f*Screen.width)-(.48f * Screen.width), Screen.width*.48f, Screen.height), bite6);
+				GUI.DrawTexture(new Rect(0f, 0f, Screen.width*.45f, Screen.height), bite6);
 			}
 			if( player1Counter > 1.2){
-				GUI.DrawTexture(new Rect(0f, (.52f*Screen.width)-(.48f * Screen.width), Screen.width*.48f, Screen.height), bite7);
+				GUI.DrawTexture(new Rect(0f, 0f, Screen.width*.45f, Screen.height), bite7);
 			}
 			if( player1Counter > 1.4){
-				GUI.DrawTexture(new Rect(0f, (.52f*Screen.width)-(.48f * Screen.width), Screen.width*.48f, Screen.height), bite8);
+				GUI.DrawTexture(new Rect(0f, 0f, Screen.width*.45f, Screen.height), bite8);
 			}
 			if  (player1Counter > 1.6){
-				GUI.DrawTexture(new Rect(0f, (.52f*Screen.width)-(.48f * Screen.width), Screen.width*.48f, Screen.height), bite9);
+				GUI.DrawTexture(new Rect(0f, 0f, Screen.width*.45f, Screen.height), bite9);
 			}
 			if  (player1Counter > 1.8){
-				GUI.DrawTexture(new Rect(0f, (.52f*Screen.width)-(.48f * Screen.width), Screen.width*.48f, Screen.height), bite10);
+				GUI.DrawTexture(new Rect(0f, 0f, Screen.width*.45f, Screen.height), bite10);
 			}
 			if  (player1Counter > 2.0){
-				GUI.DrawTexture(new Rect(0f, (.52f*Screen.width)-(.48f * Screen.width), Screen.width*.48f, Screen.height), bite11);
+				GUI.DrawTexture(new Rect(0f, 0f, Screen.width*.45f, Screen.height), bite11);
 			}
 			if  (player1Counter > 2.2){
-				GUI.DrawTexture(new Rect(0f, (.52f*Screen.width)-(.48f * Screen.width), Screen.width*.48f, Screen.height), bite12);
+				GUI.DrawTexture(new Rect(0f, 0f, Screen.width*.45f, Screen.height), bite12);
 			}
 			
 		}
 		if (player2dead){
-			//GUI.DrawTexture(new Rect(Screen.width*.52f,  Screen.height * .04f, Screen.width*.48f, Screen.height),blood);
-			GUI.DrawTexture(new Rect(Screen.width*.52f,  Screen.height * .04f, Screen.width*.48f, Screen.height), bite1);
+			//GUI.DrawTexture(new Rect(Screen.width*.52f,  Screen.height * .04f, Screen.width*.45f, Screen.height),blood);
+			GUI.DrawTexture(new Rect(Screen.width*.52f,  Screen.height * .04f, Screen.width*.45f, Screen.height), bite1);
 			if( player2Counter > .2){
-				GUI.DrawTexture(new Rect(Screen.width*.52f,  Screen.height * .04f, Screen.width*.48f, Screen.height), bite2);
+				GUI.DrawTexture(new Rect(Screen.width*.52f,  Screen.height * .04f, Screen.width*.45f, Screen.height), bite2);
 			}
 			if( player2Counter > .4){
-				GUI.DrawTexture(new Rect(Screen.width*.52f,  Screen.height * .04f, Screen.width*.48f, Screen.height), bite3);
+				GUI.DrawTexture(new Rect(Screen.width*.52f,  Screen.height * .04f, Screen.width*.45f, Screen.height), bite3);
 			}
 			if( player2Counter > .6){
-				GUI.DrawTexture(new Rect(Screen.width*.52f,  Screen.height * .04f, Screen.width*.48f, Screen.height), bite4);
+				GUI.DrawTexture(new Rect(Screen.width*.52f,  Screen.height * .04f, Screen.width*.45f, Screen.height), bite4);
 			}
 			if( player2Counter > .8){
-				GUI.DrawTexture(new Rect(Screen.width*.52f,  Screen.height * .04f, Screen.width*.48f, Screen.height), bite5);
+				GUI.DrawTexture(new Rect(Screen.width*.52f,  Screen.height * .04f, Screen.width*.45f, Screen.height), bite5);
 			}
 			if( player2Counter > 1.0){
-				GUI.DrawTexture(new Rect(Screen.width*.52f,  Screen.height * .04f, Screen.width*.48f, Screen.height), bite6);
+				GUI.DrawTexture(new Rect(Screen.width*.52f,  Screen.height * .04f, Screen.width*.45f, Screen.height), bite6);
 			}
 			if( player2Counter > 1.2){
-				GUI.DrawTexture(new Rect(Screen.width*.52f,  Screen.height * .04f, Screen.width*.48f, Screen.height), bite7);
+				GUI.DrawTexture(new Rect(Screen.width*.52f,  Screen.height * .04f, Screen.width*.45f, Screen.height), bite7);
 			}
 			if( player2Counter > 1.4){
-				GUI.DrawTexture(new Rect(Screen.width*.52f,  Screen.height * .04f, Screen.width*.48f, Screen.height), bite8);
+				GUI.DrawTexture(new Rect(Screen.width*.52f,  Screen.height * .04f, Screen.width*.45f, Screen.height), bite8);
 			}
 			if  (player2Counter > 1.6){
-				GUI.DrawTexture(new Rect(Screen.width*.52f,  Screen.height * .04f, Screen.width*.48f, Screen.height), bite9);
+				GUI.DrawTexture(new Rect(Screen.width*.52f,  Screen.height * .04f, Screen.width*.45f, Screen.height), bite9);
 			}
 			if  (player2Counter > 1.8){
-				GUI.DrawTexture(new Rect(Screen.width*.52f,  Screen.height * .04f, Screen.width*.48f, Screen.height), bite10);
+				GUI.DrawTexture(new Rect(Screen.width*.52f,  Screen.height * .04f, Screen.width*.45f, Screen.height), bite10);
 			}
 			if  (player2Counter > 2.0){
-				GUI.DrawTexture(new Rect(Screen.width*.52f,  Screen.height * .04f, Screen.width*.48f, Screen.height), bite11);
+				GUI.DrawTexture(new Rect(Screen.width*.52f,  Screen.height * .04f, Screen.width*.45f, Screen.height), bite11);
 			}
 			if  (player2Counter > 2.2){
-				GUI.DrawTexture(new Rect(Screen.width*.52f,  Screen.height * .04f, Screen.width*.48f, Screen.height), bite12);
+				GUI.DrawTexture(new Rect(Screen.width*.52f,  Screen.height * .04f, Screen.width*.45f, Screen.height), bite12);
 			}
 		}
 		
@@ -138,11 +138,13 @@ public class respawnPlayerScript : MonoBehaviour {
 	}
 	void player1Died(){
 		//print ("p1died called");
+		player1.audio.Play();
 		enemyTargetTracker.PLAYER_ONE_DEAD = true;
 		player1dead = true;
 	}
 	
 	void player2Died(){
+		player1.audio.Play();
 		enemyTargetTracker.PLAYER_TWO_DEAD = true;
 		player2dead = true;
 	}

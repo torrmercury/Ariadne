@@ -166,18 +166,25 @@ function Update () {
     if(hit1 && hitDistance1 < 5.0){
 		this.transform.Find("demon").animation.CrossFade("demonattack");
 		Debug.Log("player 1 collision");
-		goal.SendMessage("player1Died");
 		if(!selfRespawning){
+			goal.SendMessage("player1Died");
 			selfRespawn();
 		}
 	}else if(hit2 && hitDistance2 < 5.0){
 		this.transform.Find("demon").animation.CrossFade("demonattack");
 		Debug.Log("player 2 collision");
-		goal.SendMessage("player2Died");
 		if(!selfRespawning){
+			goal.SendMessage("player2Died");
 			selfRespawn();
 		}
+	}else if(hit1 && hitDistance1 < 20.0){
+		speed = 25;
+		this.transform.Find("demon").animation.CrossFade("demonrun");
+	}else if(hit2 && hitDistance2 < 20.0){
+		speed = 25;
+		this.transform.Find("demon").animation.CrossFade("demonrun");
 	}else{
+		speed = 18;
 		this.transform.Find("demon").animation.CrossFade("demonwalk");
 	}
 }

@@ -9,6 +9,10 @@ var watchPosition;
 var countDown = 2.0f;
 var chaseBegan = false;
 
+private var selfRespawnPoint;
+private var selfRespawnRotation;
+private var selfRespawning;
+
 @script AddComponentMenu("Camera-Control/Smooth Look At")
 
 
@@ -39,10 +43,14 @@ function Update (){
 		target = player2;
 		startChase();
    	}
-   	Debug.Log(Vector3.Distance(watchPosition, player1.transform.position));
+   	//Debug.Log(Vector3.Distance(watchPosition, player1.transform.position));
 }
 
 function Start () {
+	selfRespawnPoint = this.transform.position;
+	selfRespawnRotation = this.transform.localRotation;
+	selfRespawning = false;
+	
 	watchPosition = this.transform.position + this.transform.forward * 25;
 	// Make the rigid body not change rotation
    	if (rigidbody)
@@ -54,7 +62,8 @@ function startChase() {
 	if(countDown <= 0){
 		transform.Find("Enemy_Sphere").GetComponent(MeshRenderer).enabled = true;
 	   	chaseBegan = true;
-	   	Destroy(gameObject, 7.0f);
+	   	yield WaitForSeconds(5);
+	   	selfRespawn();
    	}
 }
 
@@ -67,13 +76,27 @@ function follow(){
 
 
 function OnTriggerEnter (other : Collider) {
-	if (other.transform == player1){
+	if (other.transform == player1 && chaseBegan){
 		Debug.Log("Player1 got hit");
-	    goal.SendMessage("player1Died");
-	    Destroy(gameObject);
-	}else if (other.transform == player2){
+		if(!selfRespawning){
+			goal.SendMessage("player2Died");
+			selfRespawn();
+		}
+	}else if (other.transform == player2 && chaseBegan){
 		Debug.Log("Player2 got hit");
-		goal.SendMessage("player2Died");
-	    Destroy(gameObject);
+		if(!selfRespawning){
+			goal.SendMessage("player2Died");
+			selfRespawn();
+		}
 	}
+}
+
+function selfRespawn(){
+	selfRespawning = true;
+	yield WaitForSeconds(5);
+	this.transform.position = selfRespawnPoint;
+	this.transform.localRotation = selfRespawnRotation;
+	selfRespawning = false;
+	chaseBegan = false;
+	countDown = 2.0f;
 }

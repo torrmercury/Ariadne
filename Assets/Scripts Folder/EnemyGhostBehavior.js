@@ -28,8 +28,12 @@ function LateUpdate () {
 }
 
 function Update (){
-	if ( counter++ > 300){
+	if (target){
    		follow();
+   	} else if (enemyTargetTracker.TARGET_PLAYER == 0){
+   		target = player1;
+   	} else if (enemyTargetTracker.TARGET_PLAYER == 1){
+   		target = player2;
    	}
 }
 
