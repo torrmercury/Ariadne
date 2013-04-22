@@ -139,13 +139,11 @@ public class respawnPlayerScript : MonoBehaviour {
 	void player1Died(){
 		//print ("p1died called");
 		enemyTargetTracker.PLAYER_ONE_DEAD = true;
-	    enemyTargetTracker.TARGET_PLAYER = 1;
 		player1dead = true;
 	}
 	
 	void player2Died(){
 		enemyTargetTracker.PLAYER_TWO_DEAD = true;
-	    enemyTargetTracker.TARGET_PLAYER = 0;
 		player2dead = true;
 	}
 	

@@ -34,4 +34,10 @@ public class Torchelight : MonoBehaviour {
 		Fumee.GetComponent<ParticleSystem>().emissionRate=IntensityLight*12f;		
 
 	}
+	
+    void OnTriggerStay(Collider other) {
+        if ((other.tag == "Player1" && (Input.GetButton("Activate1") || Input.GetKeyDown(KeyCode.R))) || (other.tag == "Player2" && Input.GetButton("Activate2"))){
+			IntensityLight = 1f - IntensityLight;
+		}
+    }
 }

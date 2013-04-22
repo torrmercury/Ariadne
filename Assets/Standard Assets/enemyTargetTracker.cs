@@ -2,7 +2,7 @@ using UnityEngine;
 using System.Collections;
 
 public class enemyTargetTracker : MonoBehaviour {
-	public static int TARGET_PLAYER = 0;
+	public static int TARGET_PLAYER = -1;
 	public static int PLAYER1KEY = 0;
 	public static int PLAYER2KEY = 0;
 	public static bool PLAYER_ONE_DEAD = false;

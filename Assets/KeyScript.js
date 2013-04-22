@@ -12,7 +12,7 @@ function Update () {
 }
 
 function OnTriggerStay (other : Collider) {
-    if ((other.tag == "Player1" && Input.GetButton("Activate1")) || Input.GetKeyDown(KeyCode.R)){
+    if (other.tag == "Player1" && (Input.GetButton("Activate1") || Input.GetKeyDown(KeyCode.R))){
 		if(enemyTargetTracker.PLAYER1KEY == 0){
 			Debug.Log ("P1 GOT KEY");
 			enemyTargetTracker.PLAYER1KEY = 1;
