@@ -79,7 +79,7 @@ function OnTriggerEnter (other : Collider) {
 	if (other.transform == player1 && chaseBegan){
 		Debug.Log("Player1 got hit");
 		if(!selfRespawning){
-			goal.SendMessage("player2Died");
+			goal.SendMessage("player1Died");
 			selfRespawn();
 		}
 	}else if (other.transform == player2 && chaseBegan){
