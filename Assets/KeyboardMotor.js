@@ -1,5 +1,4 @@
-var alive = true;
-var speed : int = 20;
+var speed : int = 1;
 private var flashlight : Light;
 private var pointlight : Light;
 private var shakeScript : CameraShake;
@@ -13,13 +12,11 @@ function Start () {
 function FixedUpdate () {
 	var controller : CharacterController = GetComponent(CharacterController);
 	var HDir = Vector3.zero;
-	if(!alive){
-		speed = 0;
-	}else if(Input.GetKey(KeyCode.Space)){
-		speed = 30;
+	if(Input.GetKey(KeyCode.Space)){
+		speed = 3;
 		shakeScript.shouldShake = true;
 	} else{
-		speed = 10;
+		speed = 1;
 		if(shakeScript.shouldShake){
 			shakeScript.shouldShake = false;
 			this.transform.Find("Main Camera").rotation.x = this.transform.rotation.x;
@@ -29,30 +26,32 @@ function FixedUpdate () {
 		}
 	}
 
-	if (Input.GetKey (KeyCode.UpArrow) || Input.GetKey(KeyCode.W)){
-		HDir = this.transform.forward;
-		HDir.y = 0;
-		controller.Move(HDir.normalized * Time.deltaTime*speed);
-		var flags;
-		flags = controller.Move(HDir.normalized * Time.deltaTime*speed);
-		//Debug.Log(flags);
-	}
-	if (Input.GetKey (KeyCode.DownArrow) || Input.GetKey(KeyCode.S)){
-		HDir = this.transform.forward * -1;
-		HDir.y = 0;
-		//var flags;
-		flags = controller.Move(HDir.normalized * Time.deltaTime*speed);
-		//Debug.Log(flags);
-	}
-	if (Input.GetKey (KeyCode.LeftArrow) || Input.GetKey(KeyCode.A)){
-		HDir = this.transform.right * -1;
-		HDir.y = 0;
-		controller.Move(HDir.normalized * Time.deltaTime*speed);
-	}
-	if (Input.GetKey (KeyCode.RightArrow) || Input.GetKey(KeyCode.D)){
-		HDir = this.transform.right;
-		HDir.y = 0;
-		controller.Move(HDir.normalized * Time.deltaTime*speed);
+	if(!enemyTargetTracker.PLAYER_ONE_DEAD){
+		if (Input.GetKey (KeyCode.UpArrow) || Input.GetKey(KeyCode.W)){
+			HDir = this.transform.forward;
+			HDir.y = 0;
+			controller.Move(HDir.normalized * Time.deltaTime*speed);
+			var flags;
+			flags = controller.Move(HDir.normalized * Time.deltaTime*speed);
+			//Debug.Log(flags);
+		}
+		if (Input.GetKey (KeyCode.DownArrow) || Input.GetKey(KeyCode.S)){
+			HDir = this.transform.forward * -1;
+			HDir.y = 0;
+			//var flags;
+			flags = controller.Move(HDir.normalized * Time.deltaTime*speed);
+			//Debug.Log(flags);
+		}
+		if (Input.GetKey (KeyCode.LeftArrow) || Input.GetKey(KeyCode.A)){
+			HDir = this.transform.right * -1;
+			HDir.y = 0;
+			controller.Move(HDir.normalized * Time.deltaTime*speed);
+		}
+		if (Input.GetKey (KeyCode.RightArrow) || Input.GetKey(KeyCode.D)){
+			HDir = this.transform.right;
+			HDir.y = 0;
+			controller.Move(HDir.normalized * Time.deltaTime*speed);
+		}
 	}
 }
 

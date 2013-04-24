@@ -25,8 +25,6 @@ public class respawnPlayerScript : MonoBehaviour {
 	//start positions
 	private Vector3 startp1;
 	private Vector3 startp2;
-	private Quaternion startrotationp1;
-	private Quaternion startrotationp2;
 	
 	
 	//variables for within
@@ -39,12 +37,10 @@ public class respawnPlayerScript : MonoBehaviour {
 	//p1 go back to start position 
 	void player1Relocate(){
 		player1.transform.position = startp1;
-		player1.transform.localRotation = startrotationp1;
 	}
 	//p2 go back to start
 	void player2Relocate(){
 		player2.transform.position = startp2;
-		player2.transform.localRotation = startrotationp2;
 	}
 	
 	
@@ -167,8 +163,6 @@ public class respawnPlayerScript : MonoBehaviour {
 	void Start(){
         startp1 = player1.transform.position;
 		startp2 = player2.transform.position;
-		startrotationp1 = player1.transform.localRotation;
-		startrotationp2 = player2.transform.localRotation;
 		
 	}
 }

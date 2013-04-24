@@ -3,7 +3,7 @@
 var player1: Transform;
 var player2: Transform;
 var goal: Transform;
-var speed = 18;
+var speed = 1;
 var chaseRange = 20; // will chase player regardless of flashlight within this range
 var wallBuffer = 7.0;
 var damping = 6.0;
@@ -167,28 +167,28 @@ function Update () {
     controller.Move(moveDirection.normalized * Time.deltaTime * speed);
     
     //hit detection based on distance
-    if(hit1 && hitDistance1 < 5.0){
+    if(hit1 && hitDistance1 < 1.0){
 		this.transform.Find("demon").animation.CrossFade("demonattack");
 		Debug.Log("player 1 collision");
 		if(!selfRespawning){
 			goal.SendMessage("player1Died");
 			selfRespawn();
 		}
-	}else if(hit2 && hitDistance2 < 5.0){
+	}else if(hit2 && hitDistance2 < 1.0){
 		this.transform.Find("demon").animation.CrossFade("demonattack");
 		Debug.Log("player 2 collision");
 		if(!selfRespawning){
 			goal.SendMessage("player2Died");
 			selfRespawn();
 		}
-	}else if(hit1 && hitDistance1 < 20.0){
-		speed = 25;
+	}else if(hit1 && hitDistance1 < 8.0){
+		speed = 1.5;
 		this.transform.Find("demon").animation.CrossFade("demonrun");
-	}else if(hit2 && hitDistance2 < 20.0){
-		speed = 25;
+	}else if(hit2 && hitDistance2 < 8.0){
+		speed = 1.5;
 		this.transform.Find("demon").animation.CrossFade("demonrun");
 	}else{
-		speed = 18;
+		speed = 1;
 		this.transform.Find("demon").animation.CrossFade("demonwalk");
 	}
 }

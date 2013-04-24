@@ -2,7 +2,6 @@ var xSpeed = 250.0;
 var ySpeed = 120.0;
 var speed : int = 20;
 
-var alive = true;
 private var x = 0.0;
 private var y = 0.0;
 private var flashlight : Light;
@@ -29,15 +28,12 @@ function LateUpdate () {
 		    y += Input.GetAxis("JoyLeftStickV2") * ySpeed * 0.02;
 			y = Mathf.Clamp(y, -60F, 60F);
 		    var rotation = Quaternion.Euler(y, x, 0);
-		
 		    transform.rotation = rotation;
 		}
 }
 
 function Update () {
-	if(!alive){
-		speed = 0;
-	}else if(Input.GetButton("Joy Sprint2")){
+	if(Input.GetButton("Joy Sprint2")){
 		speed = 30;
 		this.transform.Find("Main Camera").getComponent(CameraShake).shouldShake = true;
 	} else{

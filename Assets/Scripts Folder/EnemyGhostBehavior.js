@@ -1,6 +1,5 @@
 var moveSpeed = 17.5;
 var damping = 6.0;
-var smooth = true;
 var counter = 0;
 var target : Transform;
 var player1: Transform;
@@ -11,25 +10,24 @@ var goal: Transform;
 
 
 function LateUpdate () {
-		if (target) {
-			if (smooth)
-			{
-				// Look at and dampen the rotation
-				var rotation = Quaternion.LookRotation(target.position - transform.position);
-				transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * damping);
-			}
-			else
-			{
-				// Just lookat
-			    transform.LookAt(target);
-			}
+	if (target) {
+		// Look at and dampen the rotation
+		var newRotation = Quaternion.LookRotation(target.position - transform.position);
+		transform.rotation = Quaternion.Slerp(transform.rotation, newRotation, Time.deltaTime * damping);
+		
+		// float in air until near player
+		if(Vector3.Distance(this.transform.position, target.position) > 40){
+			transform.eulerAngles.z = 0;
 		}
+		Debug.Log(transform.eulerAngles);
+	} else{
 	
+	}
 }
 
 function Update (){
 	if (target){
-   		follow();
+   		transform.Translate(moveSpeed *Vector3(0,0,1)* Time.deltaTime);
    	} else if (enemyTargetTracker.TARGET_PLAYER == 0){
    		target = player1;
    	} else if (enemyTargetTracker.TARGET_PLAYER == 1){
@@ -41,14 +39,6 @@ function Start () {
 	// Make the rigid body not change rotation
    	if (rigidbody)
 		rigidbody.freezeRotation = true;
-}
-
-
-//enemy moves toward player
-function follow(){
-	if(target){
-		transform.Translate(moveSpeed *Vector3(0,0,1)* Time.deltaTime);
-	}
 }
 
 function OnTriggerEnter (other : Collider) {

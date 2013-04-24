@@ -1,4 +1,3 @@
-var alive = true;
 var xSpeed = 250.0;
 var ySpeed = 120.0;
 var speed : int = 20;
@@ -33,8 +32,7 @@ function LateUpdate () {
 		//in order to access a enemyTargetTracker (a c# script),
 		// the c# script must be in the standard assest folder and the 
 		//javascript script must be outside of the standard assets folder.
-		if (!enemyTargetTracker.PLAYER_ONE_DEAD){ 
- 			
+		if (!enemyTargetTracker.PLAYER_ONE_DEAD){ 	
        		x += Input.GetAxis("JoyLeftStickH1") * xSpeed * 0.02;
         	y += Input.GetAxis("JoyLeftStickV1") * ySpeed * 0.02;
         	y = Mathf.Clamp(y, -60F, 60F);
@@ -45,9 +43,7 @@ function LateUpdate () {
 
 function Update () {
 	//Debug.Log(Input.GetAxis("Sprint"));
-	if(!alive){
-		speed = 0;
-	}else if(Input.GetButton("Joy Sprint1")){
+	if(Input.GetButton("Joy Sprint1")){
 		speed = 30;
 		this.transform.Find("Main Camera").getComponent(CameraShake).shouldShake = true;
 	} else{
