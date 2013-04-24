@@ -41,19 +41,10 @@ public class respawnPlayerScript : MonoBehaviour {
 		player1.transform.position = startp1;
 		player1.transform.localRotation = startrotationp1;
 	}
-	//p1 now alive
-	void player1Respawn(){
-		player1dead = false;
-	}
-	
 	//p2 go back to start
 	void player2Relocate(){
 		player2.transform.position = startp2;
 		player2.transform.localRotation = startrotationp2;
-	}
-	//p2 back alive
-	void player2Respawn(){
-		player2dead = false;
 	}
 	
 	
@@ -156,7 +147,7 @@ public class respawnPlayerScript : MonoBehaviour {
 			if (player1Counter > 5){
 				//print ("hihihi");
 				player1Relocate();
-				player1Respawn();
+				player1dead = false;
 				enemyTargetTracker.PLAYER_ONE_DEAD = false;
 				player1Counter = 0;
 			}
@@ -166,8 +157,8 @@ public class respawnPlayerScript : MonoBehaviour {
 			//print (player2Counter);
 			if (player2Counter > 5){
 				//print ("hihihi");
-				player2Respawn();
 				player2Relocate();
+				player2dead = false;
 				enemyTargetTracker.PLAYER_TWO_DEAD = false;
 				player2Counter = 0;
 			}
@@ -180,7 +171,4 @@ public class respawnPlayerScript : MonoBehaviour {
 		startrotationp2 = player2.transform.localRotation;
 		
 	}
-	
-	
-	
 }

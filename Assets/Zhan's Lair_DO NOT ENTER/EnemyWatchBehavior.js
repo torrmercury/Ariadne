@@ -159,7 +159,11 @@ function Update () {
     moveDirection.y = 0;
     
     //Debug.Log(moveDirection);
-    transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(moveDirection), Time.deltaTime * damping);
+    if(moveDirection != Vector3.zero){
+    	transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(moveDirection), Time.deltaTime * damping);
+    }else{
+    	transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(Vector3.zero), Time.deltaTime * damping);
+    }
     controller.Move(moveDirection.normalized * Time.deltaTime * speed);
     
     //hit detection based on distance

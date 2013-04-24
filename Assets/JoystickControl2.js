@@ -1,11 +1,13 @@
 var xSpeed = 250.0;
 var ySpeed = 120.0;
 var speed : int = 20;
-var chainLinkPrefab: Transform;
+
+var alive = true;
 private var x = 0.0;
 private var y = 0.0;
 private var flashlight : Light;
 private var pointlight : Light;
+private var shakeScript : CameraShake;
 
 function Start () {
     var angles = transform.eulerAngles;
@@ -13,6 +15,7 @@ function Start () {
     y = angles.x;
     flashlight = this.transform.Find("Main Camera").Find("Spotlight").GetComponent("Light");
 	pointlight = this.transform.Find("Main Camera").Find("Point light").GetComponent("Light");
+	shakeScript = this.transform.Find("Main Camera").GetComponent("CameraShake");
  
     // Make the rigid body not change rotation
     if (rigidbody)
@@ -32,10 +35,20 @@ function LateUpdate () {
 }
 
 function Update () {
-	if (Input.GetButton("Joy Sprint2")){
-		speed = 35;
+	if(!alive){
+		speed = 0;
+	}else if(Input.GetButton("Joy Sprint2")){
+		speed = 30;
+		this.transform.Find("Main Camera").getComponent(CameraShake).shouldShake = true;
 	} else{
-		speed = 20;
+		speed = 10;
+		if(shakeScript.shouldShake){
+			shakeScript.shouldShake = false;
+			this.transform.Find("Main Camera").rotation.x = this.transform.rotation.x;
+			this.transform.Find("Main Camera").rotation.y = this.transform.rotation.y;
+			this.transform.Find("Main Camera").rotation.z = this.transform.rotation.z;
+			this.transform.Find("Main Camera").rotation.w = this.transform.rotation.w;
+		}
 	}
 
 	if (!enemyTargetTracker.PLAYER_TWO_DEAD){
@@ -48,17 +61,7 @@ function Update () {
 		CombinedDir.y = 0;
 		controller.Move(CombinedDir.normalized * Time.deltaTime * speed);
 	}
-	if ( Input.GetButton ("deployThread2")){
-		//createThread
-		//Debug.Log("hizzhere");
-		//drop chain links
-		//Rigidbody chainLink;
-       // chainLink = Instantiate(chainLinkPrefab, transform.position, transform.rotation) as Rigidbody;
-		var threadpos = this.transform.position;
-		threadpos.y = 0;
-       	Instantiate (chainLinkPrefab, threadpos, Quaternion.identity);
-  
-	}
+
 	if (Input.GetButtonDown("flashlightOn2")) {
 		flashlight.enabled = !flashlight.enabled;
 		pointlight.enabled = !pointlight.enabled;

@@ -1,21 +1,34 @@
+var alive = true;
 var speed : int = 20;
-var chainLinkPrefab: Transform;
 private var flashlight : Light;
 private var pointlight : Light;
+private var shakeScript : CameraShake;
 
 function Start () {
 	pointlight = this.transform.Find("Main Camera").Find("Point light").GetComponent("Light");
 	flashlight = this.transform.Find("Main Camera").Find("Spotlight").GetComponent("Light");
+	shakeScript = this.transform.Find("Main Camera").GetComponent("CameraShake");
 }
 
 function FixedUpdate () {
 	var controller : CharacterController = GetComponent(CharacterController);
 	var HDir = Vector3.zero;
-	if ( Input.GetKey(KeyCode.Space)){
-		speed = 35;
-		//Debug.Log ("i can sprint now");
+	if(!alive){
+		speed = 0;
+	}else if(Input.GetKey(KeyCode.Space)){
+		speed = 30;
+		shakeScript.shouldShake = true;
+	} else{
+		speed = 10;
+		if(shakeScript.shouldShake){
+			shakeScript.shouldShake = false;
+			this.transform.Find("Main Camera").rotation.x = this.transform.rotation.x;
+			this.transform.Find("Main Camera").rotation.y = this.transform.rotation.y;
+			this.transform.Find("Main Camera").rotation.z = this.transform.rotation.z;
+			this.transform.Find("Main Camera").rotation.w = this.transform.rotation.w;
+		}
 	}
-	else { speed = 8;}
+
 	if (Input.GetKey (KeyCode.UpArrow) || Input.GetKey(KeyCode.W)){
 		HDir = this.transform.forward;
 		HDir.y = 0;
@@ -47,10 +60,5 @@ function Update () {
 	if (Input.GetKeyDown(KeyCode.E)) {
 		flashlight.enabled = !flashlight.enabled;
 		pointlight.enabled = !pointlight.enabled;
-	}
-	if (Input.GetKey(KeyCode.Q)){
-		var threadpos = this.transform.position;
-		threadpos.y = 0;
-       	Instantiate (chainLinkPrefab, threadpos, Quaternion.identity);
 	}
 }
