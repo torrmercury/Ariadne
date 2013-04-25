@@ -5,7 +5,7 @@ public class respawnPlayerScript : MonoBehaviour {
 	
 	//variables set outside
 	public GameObject goal;
-	public GameObject player1;
+	public static GameObject player1;
 	public GameObject player2;
 	
 	//bite textures
