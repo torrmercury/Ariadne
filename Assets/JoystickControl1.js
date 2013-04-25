@@ -1,6 +1,7 @@
 var xSpeed = 250.0;
 var ySpeed = 120.0;
-var speed : int = 20;
+var normalSpeed : int = 1;
+var sprintSpeed : int = 3;
 
 ////thread deploy no longer used.
 //var chainLinkPrefab: Transform;
@@ -44,10 +45,10 @@ function LateUpdate () {
 function Update () {
 	//Debug.Log(Input.GetAxis("Sprint"));
 	if(Input.GetButton("Joy Sprint1")){
-		speed = 30;
+		speed = sprintSpeed;
 		this.transform.Find("Main Camera").getComponent(CameraShake).shouldShake = true;
 	} else{
-		speed = 10;
+		speed = normalSpeed;
 		if(shakeScript.shouldShake){
 			shakeScript.shouldShake = false;
 			this.transform.Find("Main Camera").rotation.x = this.transform.rotation.x;

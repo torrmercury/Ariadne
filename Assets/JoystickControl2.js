@@ -1,6 +1,7 @@
 var xSpeed = 250.0;
 var ySpeed = 120.0;
-var speed : int = 20;
+var normalSpeed : int = 1;
+var sprintSpeed : int = 3;
 
 private var x = 0.0;
 private var y = 0.0;
@@ -34,9 +35,10 @@ function LateUpdate () {
 
 function Update () {
 	if(Input.GetButton("Joy Sprint2")){
-		speed = 30;
+		speed = sprintSpeed;
 		this.transform.Find("Main Camera").getComponent(CameraShake).shouldShake = true;
 	} else{
+		speed = normalSpeed;
 		speed = 10;
 		if(shakeScript.shouldShake){
 			shakeScript.shouldShake = false;

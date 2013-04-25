@@ -4,7 +4,7 @@ var player1: Transform;
 var player2: Transform;
 var goal: Transform;
 var speed = 1;
-var chaseRange = 20; // will chase player regardless of flashlight within this range
+var chaseRange = 5; // will chase player regardless of flashlight within this range
 var wallBuffer = 7.0;
 var damping = 6.0;
 

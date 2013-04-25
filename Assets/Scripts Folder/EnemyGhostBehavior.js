@@ -1,4 +1,4 @@
-var moveSpeed = 17.5;
+var moveSpeed = 1.5;
 var damping = 6.0;
 var counter = 0;
 var target : Transform;
@@ -14,7 +14,7 @@ function LateUpdate () {
 		// Look at and dampen the rotation
 		var targetDirection = target.position - transform.position;
 		
-		if(Vector3.Distance(this.transform.position, target.position) > 40){
+		if(Vector3.Distance(this.transform.position, target.position) > 10){
 			targetDirection.y = 0;
 		}
 		
@@ -33,7 +33,7 @@ function Update (){
    		target = player2;
    	}
    	
-   	if (Vector3.Distance(this.transform.position, target.position) > 40 && this.transform.position.y < 30){
+   	if (Vector3.Distance(this.transform.position, target.position) > 10 && this.transform.position.y < 7.5){
    		transform.Translate(moveSpeed * Vector3(0,1,0) * Time.deltaTime);
    	}
 }
