@@ -12,26 +12,29 @@ var goal: Transform;
 function LateUpdate () {
 	if (target) {
 		// Look at and dampen the rotation
-		var newRotation = Quaternion.LookRotation(target.position - transform.position);
+		var targetDirection = target.position - transform.position;
+		
+		if(Vector3.Distance(this.transform.position, target.position) > 40){
+			targetDirection.y = 0;
+		}
+		
+		var newRotation = Quaternion.LookRotation(targetDirection);
 		transform.rotation = Quaternion.Slerp(transform.rotation, newRotation, Time.deltaTime * damping);
 		
-		// float in air until near player
-		if(Vector3.Distance(this.transform.position, target.position) > 40){
-			transform.eulerAngles.z = 0;
-		}
-		Debug.Log(transform.eulerAngles);
-	} else{
-	
 	}
 }
 
 function Update (){
 	if (target){
-   		transform.Translate(moveSpeed *Vector3(0,0,1)* Time.deltaTime);
+   		transform.Translate(moveSpeed * Vector3(0,0,1) * Time.deltaTime);
    	} else if (enemyTargetTracker.TARGET_PLAYER == 0){
    		target = player1;
    	} else if (enemyTargetTracker.TARGET_PLAYER == 1){
    		target = player2;
+   	}
+   	
+   	if (Vector3.Distance(this.transform.position, target.position) > 40 && this.transform.position.y < 30){
+   		transform.Translate(moveSpeed * Vector3(0,1,0) * Time.deltaTime);
    	}
 }
 
