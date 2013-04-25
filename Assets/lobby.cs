@@ -2,6 +2,9 @@ using UnityEngine;
  
 public class lobby : MonoBehaviour
 {
+	public GameObject wall1;
+	public GameObject wall2;
+	
 	public bool first = false;
     // Use this for initialization
     void Start()
@@ -29,7 +32,7 @@ public class lobby : MonoBehaviour
 			
 			GameObject monster = PhotonNetwork.Instantiate("_Player1Controller", new Vector3(-32.0f,1.25f,-54.0f), Quaternion.identity, 0);
 			CharacterControl controller = monster.GetComponent<CharacterControl>();
-    controller.enabled = true;
+    		controller.enabled = true;
     	//	Camera camera = monster.GetComponent<Camera>();
 			
     		//camera.enabled = true;
@@ -38,7 +41,7 @@ public class lobby : MonoBehaviour
 		else { 
 			GameObject monster = PhotonNetwork.Instantiate("_Player2Controller", new Vector3(-34.0f,1.25f,-54.0f), Quaternion.identity, 0);
 			CharacterControl controller = monster.GetComponent<CharacterControl>();
-    controller.enabled = true;
+    		controller.enabled = true;
 			//monster.camera = enabled;
 	
 		}
