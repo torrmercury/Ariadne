@@ -33,7 +33,7 @@ function Update (){
    		target = player2;
    	}
    	
-   	if (Vector3.Distance(this.transform.position, target.position) > 10 && this.transform.position.y < 7.5){
+   	if (target && Vector3.Distance(this.transform.position, target.position) > 10 && this.transform.position.y < 7.5){
    		transform.Translate(moveSpeed * Vector3(0,1,0) * Time.deltaTime);
    	}
 }
