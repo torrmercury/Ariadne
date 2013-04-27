@@ -33,7 +33,7 @@ function Update (){
    		target = player2;
    	}
    	
-   	if (target && Vector3.Distance(this.transform.position, target.position) > 10 && this.transform.position.y < 7.5){
+   	if (((target && Vector3.Distance(this.transform.position, target.position) > 10) || !target) && this.transform.position.y < 7.5){
    		transform.Translate(moveSpeed * Vector3(0,1,0) * Time.deltaTime);
    	}
 }
@@ -49,11 +49,11 @@ function OnTriggerEnter (other : Collider) {
 		Debug.Log("Player1 got hit");
 		target = player2;
 	    goal.SendMessage("player1Died");
-	    enemyTargetTracker.TARGET_PLAYER = 1;
+	    enemyTargetTracker.TARGET_PLAYER = -1;
 	}else if (other.transform == player2){
 		Debug.Log("Player2 got hit");
 		target = player1;
 		goal.SendMessage("player2Died");
-	    enemyTargetTracker.TARGET_PLAYER = 0;
+	    enemyTargetTracker.TARGET_PLAYER = -1;
 	}
 }
