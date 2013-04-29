@@ -1,29 +1,20 @@
-var speed : int = 1;
+var normalSpeed : int = 1;
+var sprintSpeed : int = 3;
 private var flashlight : Light;
 private var pointlight : Light;
-private var shakeScript : CameraShake;
 
 function Start () {
 	pointlight = this.transform.Find("Main Camera").Find("Point light").GetComponent("Light");
 	flashlight = this.transform.Find("Main Camera").Find("Spotlight").GetComponent("Light");
-	shakeScript = this.transform.Find("Main Camera").GetComponent("CameraShake");
 }
 
 function FixedUpdate () {
 	var controller : CharacterController = GetComponent(CharacterController);
 	var HDir = Vector3.zero;
 	if(Input.GetKey(KeyCode.Space)){
-		speed = 3;
-		shakeScript.shouldShake = true;
+		speed = sprintSpeed;
 	} else{
-		speed = 1;
-		if(shakeScript.shouldShake){
-			shakeScript.shouldShake = false;
-			this.transform.Find("Main Camera").rotation.x = this.transform.rotation.x;
-			this.transform.Find("Main Camera").rotation.y = this.transform.rotation.y;
-			this.transform.Find("Main Camera").rotation.z = this.transform.rotation.z;
-			this.transform.Find("Main Camera").rotation.w = this.transform.rotation.w;
-		}
+		speed = normalSpeed;
 	}
 
 	if(!enemyTargetTracker.PLAYER_ONE_DEAD){

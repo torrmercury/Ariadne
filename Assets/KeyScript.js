@@ -8,7 +8,7 @@ function Start () {
 }
 
 function Update () {
-
+	transform.Rotate (0,50*Time.deltaTime,-50*Time.deltaTime);
 }
 
 function OnTriggerStay (other : Collider) {

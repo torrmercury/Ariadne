@@ -3,8 +3,6 @@ using System.Collections;
 
 public class weGotAWinner : MonoBehaviour {
 	
-	public GameObject player1;
-	public GameObject player2;
 	// Use this for initialization
 	void Start () {
 	
@@ -15,11 +13,11 @@ public class weGotAWinner : MonoBehaviour {
 	
 	}
 	public void OnTriggerEnter(Collider other){
-		if (player1 == other.gameObject){
+		if ("Player1" == other.tag){
 			Debug.Log ("win collision - player1");
 			Application.LoadLevel (1);
 		}
-		else if ( player2 == other.gameObject ){
+		else if ("Player2" == other.tag){
 			Debug.Log ("win collision - player2");
 			Application.LoadLevel (2);
 		}

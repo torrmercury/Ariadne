@@ -3,7 +3,9 @@
 var player1: Transform;
 var player2: Transform;
 var goal: Transform;
-var speed = 1;
+var speed : int = 1;
+var normalSpeed : int = 1;
+var sprintSpeed : int = 3;
 var chaseRange = 5; // will chase player regardless of flashlight within this range
 var wallBuffer = 7.0;
 var damping = 6.0;
@@ -182,13 +184,13 @@ function Update () {
 			selfRespawn();
 		}
 	}else if(hit1 && hitDistance1 < 8.0){
-		speed = 1.5;
+		speed = sprintSpeed;
 		this.transform.Find("demon").animation.CrossFade("demonrun");
 	}else if(hit2 && hitDistance2 < 8.0){
-		speed = 1.5;
+		speed = sprintSpeed;
 		this.transform.Find("demon").animation.CrossFade("demonrun");
 	}else{
-		speed = 1;
+		speed = normalSpeed;
 		this.transform.Find("demon").animation.CrossFade("demonwalk");
 	}
 }

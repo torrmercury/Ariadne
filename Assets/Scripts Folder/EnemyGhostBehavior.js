@@ -1,4 +1,4 @@
-var moveSpeed = 1.5;
+var moveSpeed = 3;
 var damping = 6.0;
 var counter = 0;
 var target : Transform;
@@ -47,13 +47,24 @@ function Start () {
 function OnTriggerEnter (other : Collider) {
 	if (other.transform == player1){
 		Debug.Log("Player1 got hit");
-		target = player2;
+		target = goal;
 	    goal.SendMessage("player1Died");
 	    enemyTargetTracker.TARGET_PLAYER = -1;
 	}else if (other.transform == player2){
 		Debug.Log("Player2 got hit");
-		target = player1;
+		target = goal;
 		goal.SendMessage("player2Died");
 	    enemyTargetTracker.TARGET_PLAYER = -1;
+	}else if (other.transform == goal){
+		Debug.Log("back to start");
+		target = null;
 	}
+}
+
+function targetP1(){
+	target = player1;
+}
+
+function targetP2(){
+	target = player2;
 }
