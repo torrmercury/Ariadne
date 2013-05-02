@@ -31,13 +31,13 @@ function LateUpdate () {
 		//in order to access a enemyTargetTracker (a c# script),
 		// the c# script must be in the standard assest folder and the 
 		//javascript script must be outside of the standard assets folder.
-		//if (!enemyTargetTracker.PLAYER_ONE_DEAD){ 	
+		if (!enemyTargetTracker.PLAYER_ONE_DEAD){ 	
        		x += Input.GetAxis("JoyLeftStickH1") * xSpeed * 0.02;
         	y += Input.GetAxis("JoyLeftStickV1") * ySpeed * 0.02;
         	y = Mathf.Clamp(y, -60F, 60F);
         	var rotation = Quaternion.Euler(y, x, 0);
         	transform.rotation = rotation;
-       // }
+        }
         
 }
 
@@ -49,7 +49,7 @@ function Update () {
 		speed = normalSpeed;
 	}
 
-	//if (!enemyTargetTracker.PLAYER_ONE_DEAD){
+	if (!enemyTargetTracker.PLAYER_ONE_DEAD){
 		var controller : CharacterController = GetComponent(CharacterController);
 		var HDir = Vector3.zero;
 		
@@ -58,7 +58,7 @@ function Update () {
 		CombinedDir = ForwardDir * Input.GetAxis("JoyRightStickV1") + RightDir * Input.GetAxis("JoyRightStickH1");
 		CombinedDir.y = 0;
 		controller.Move(CombinedDir.normalized * Time.deltaTime * speed);
-	//}
+	}
 	
 	if (Input.GetButtonDown("flashlightOn")) {
 		flashlight.enabled = !flashlight.enabled;

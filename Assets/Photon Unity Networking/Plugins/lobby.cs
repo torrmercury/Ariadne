@@ -29,9 +29,11 @@ public class lobby : MonoBehaviour
 	}
 	void OnJoinedRoom()
 	{
+		/*
 		if ( first){
 			
 			GameObject monster = PhotonNetwork.Instantiate("_Player1Controller", new Vector3(-32.0f,1.25f,-54.0f), Quaternion.identity, 0);
+			
 			JoystickControl1 joy1 = monster.GetComponent<JoystickControl1>();
 			joy1.enabled = true;
 			JoystickControl2 joy2 = monster.GetComponent<JoystickControl2>();
@@ -51,6 +53,7 @@ public class lobby : MonoBehaviour
 			Camera camera = monster.GetComponentInChildren<Camera>();
 			camera.enabled = true;
 		}
+		*/
 		
 	}
 }
