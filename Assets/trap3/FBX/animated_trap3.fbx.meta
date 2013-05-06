@@ -20,9 +20,8 @@ ModelImporter:
     4300000: pinchos
     4300002: tramp3
     4300004: tap
-    7400000: Up
+    7400000: C4D Animation Take
     7400002: Up Down
-    7400004: Down
     11100000: //RootNode
   materials:
     importMaterials: 1
@@ -46,48 +45,6 @@ ModelImporter:
       level: 0
       cycleOffset: 0
       loop: 1
-      loopBlend: 0
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
-      loopBlendPositionXZ: 0
-      keepOriginalOrientation: 0
-      keepOriginalPositionY: 1
-      keepOriginalPositionXZ: 0
-      heightFromFeet: 0
-      mirror: 0
-      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-      curves: []
-      transformMask: []
-    - name: Up
-      takeName: C4D Animation Take
-      firstFrame: 1
-      lastFrame: 21
-      wrapMode: 0
-      orientationOffsetY: 0
-      level: 0
-      cycleOffset: 0
-      loop: 0
-      loopBlend: 0
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
-      loopBlendPositionXZ: 0
-      keepOriginalOrientation: 0
-      keepOriginalPositionY: 1
-      keepOriginalPositionXZ: 0
-      heightFromFeet: 0
-      mirror: 0
-      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-      curves: []
-      transformMask: []
-    - name: Down
-      takeName: C4D Animation Take
-      firstFrame: 21
-      lastFrame: 70
-      wrapMode: 0
-      orientationOffsetY: 0
-      level: 0
-      cycleOffset: 0
-      loop: 0
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
