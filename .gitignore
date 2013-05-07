@@ -1,5 +1,5 @@
 # Ignore The following directories / file extensions
-Library
+/Library
 Temp
 
 *.DS_Store
