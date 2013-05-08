@@ -3,6 +3,7 @@
 var player1: Transform;
 var player2: Transform;
 var goal: Transform;
+var footstep : AudioClip;
 var speed : int = 1;
 var normalSpeed : int = 1;
 var sprintSpeed : int = 3;
@@ -16,15 +17,34 @@ private var selfRespawnPoint;
 private var selfRespawnRotation;
 private var selfRespawning;
 
+//footstep variables
+var stepLength = 0.2;
+var lastCheck = 0.0;
+
 function Start () {
 	playerLight1 = player1.Find("Main Camera").Find("Spotlight").GetComponent("Light");
 	playerLight2 = player2.Find("Main Camera").Find("Spotlight").GetComponent("Light");
 	selfRespawnPoint = this.transform.position;
 	selfRespawnRotation = this.transform.localRotation;
 	selfRespawning = false;
+	audio.clip = footstep;
 }
 
 function Update () {
+	
+	
+	//footstep sounds
+	if (speed == normalSpeed){
+		stepLength = 0.7;
+	}
+	else {
+		stepLength = 0.4;
+	}
+	if (Time.time - lastCheck > stepLength){
+		lastCheck = Time.time;
+		audio.Play();
+	} 
+
 	var hit : RaycastHit;
     var rayDirection1 = player1.position - transform.position;
     var rayDirection2 = player2.position - transform.position;

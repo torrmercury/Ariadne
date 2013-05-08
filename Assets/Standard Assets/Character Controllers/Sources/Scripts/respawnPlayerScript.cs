@@ -21,6 +21,13 @@ public class respawnPlayerScript : MonoBehaviour {
 	public Texture2D bite10;
 	public Texture2D bite11;
 	public Texture2D bite12;
+	public Texture2D bite13;
+	public Texture2D bite14;
+	public Texture2D bite15;
+	public Texture2D bite16;
+	public Texture2D bite17;
+	public Texture2D bite18;
+	public Texture2D bite19;
 	
 	//start positions
 	private Vector3 startp1;
@@ -48,76 +55,118 @@ public class respawnPlayerScript : MonoBehaviour {
 		//show blood texture on screen.
 		if ( player1dead ){
 			GUI.DrawTexture(new Rect(0f, 0f, Screen.width*.45f, Screen.height), bite1);
-			if( player1Counter > .2){
+			if( player1Counter > .1){
 				GUI.DrawTexture(new Rect(0f, 0f, Screen.width*.45f, Screen.height), bite2);
 			}
-			if( player1Counter > .4){
+			if( player1Counter > .2){
 				GUI.DrawTexture(new Rect(0f, 0f, Screen.width*.45f, Screen.height), bite3);
 			}
-			if( player1Counter > .6){
+			if( player1Counter > .3){
 				GUI.DrawTexture(new Rect(0f, 0f, Screen.width*.45f, Screen.height), bite4);
 			}
-			if( player1Counter > .8){
+			if( player1Counter > .4){
 				GUI.DrawTexture(new Rect(0f, 0f, Screen.width*.45f, Screen.height), bite5);
 			}
-			if( player1Counter > 1.0){
+			if( player1Counter > .5){
 				GUI.DrawTexture(new Rect(0f, 0f, Screen.width*.45f, Screen.height), bite6);
 			}
-			if( player1Counter > 1.2){
+			if( player1Counter > .6){
 				GUI.DrawTexture(new Rect(0f, 0f, Screen.width*.45f, Screen.height), bite7);
 			}
-			if( player1Counter > 1.4){
+			if( player1Counter > .7){
 				GUI.DrawTexture(new Rect(0f, 0f, Screen.width*.45f, Screen.height), bite8);
 			}
-			if  (player1Counter > 1.6){
+			if  (player1Counter > .8){
 				GUI.DrawTexture(new Rect(0f, 0f, Screen.width*.45f, Screen.height), bite9);
 			}
-			if  (player1Counter > 1.8){
+			if  (player1Counter > .9){
 				GUI.DrawTexture(new Rect(0f, 0f, Screen.width*.45f, Screen.height), bite10);
 			}
-			if  (player1Counter > 2.0){
+			if  (player1Counter > 1.0){
 				GUI.DrawTexture(new Rect(0f, 0f, Screen.width*.45f, Screen.height), bite11);
 			}
-			if  (player1Counter > 2.2){
+			if  (player1Counter > 1.1){
 				GUI.DrawTexture(new Rect(0f, 0f, Screen.width*.45f, Screen.height), bite12);
+			}
+			if( player1Counter > 1.2){
+				GUI.DrawTexture(new Rect(0f, 0f, Screen.width*.45f, Screen.height), bite13);
+			}
+			if( player1Counter > 1.3){
+				GUI.DrawTexture(new Rect(0f, 0f, Screen.width*.45f, Screen.height), bite14);
+			}
+			if( player1Counter > 1.4){
+				GUI.DrawTexture(new Rect(0f, 0f, Screen.width*.45f, Screen.height), bite15);
+			}
+			if( player1Counter > 1.5){
+				GUI.DrawTexture(new Rect(0f, 0f, Screen.width*.45f, Screen.height), bite16);
+			}
+			if( player1Counter > 1.6){
+				GUI.DrawTexture(new Rect(0f, 0f, Screen.width*.45f, Screen.height), bite17);
+			}
+			if( player1Counter > 1.7){
+				GUI.DrawTexture(new Rect(0f, 0f, Screen.width*.45f, Screen.height), bite18);
+			}
+			if( player1Counter > 1.8){
+				GUI.DrawTexture(new Rect(0f, 0f, Screen.width*.45f, Screen.height), bite19);
 			}
 			
 		}
 		if (player2dead){
 			//GUI.DrawTexture(new Rect(Screen.width*.55f,  0f, Screen.width*.45f, Screen.height),blood);
 			GUI.DrawTexture(new Rect(Screen.width*.55f,  0f, Screen.width*.45f, Screen.height), bite1);
-			if( player2Counter > .2){
+			if( player2Counter > .1){
 				GUI.DrawTexture(new Rect(Screen.width*.55f,  0f, Screen.width*.45f, Screen.height), bite2);
 			}
-			if( player2Counter > .4){
+			if( player2Counter > .2){
 				GUI.DrawTexture(new Rect(Screen.width*.55f,  0f, Screen.width*.45f, Screen.height), bite3);
 			}
-			if( player2Counter > .6){
+			if( player2Counter > .3){
 				GUI.DrawTexture(new Rect(Screen.width*.55f,  0f, Screen.width*.45f, Screen.height), bite4);
 			}
-			if( player2Counter > .8){
+			if( player2Counter > .4){
 				GUI.DrawTexture(new Rect(Screen.width*.55f,  0f, Screen.width*.45f, Screen.height), bite5);
 			}
-			if( player2Counter > 1.0){
+			if( player2Counter > .5){
 				GUI.DrawTexture(new Rect(Screen.width*.55f,  0f, Screen.width*.45f, Screen.height), bite6);
 			}
-			if( player2Counter > 1.2){
+			if( player2Counter > .6){
 				GUI.DrawTexture(new Rect(Screen.width*.55f,  0f, Screen.width*.45f, Screen.height), bite7);
 			}
-			if( player2Counter > 1.4){
+			if( player2Counter > .7){
 				GUI.DrawTexture(new Rect(Screen.width*.55f,  0f, Screen.width*.45f, Screen.height), bite8);
 			}
-			if  (player2Counter > 1.6){
+			if  (player2Counter > .8){
 				GUI.DrawTexture(new Rect(Screen.width*.55f,  0f, Screen.width*.45f, Screen.height), bite9);
 			}
-			if  (player2Counter > 1.8){
+			if  (player2Counter > .9){
 				GUI.DrawTexture(new Rect(Screen.width*.55f,  0f, Screen.width*.45f, Screen.height), bite10);
 			}
-			if  (player2Counter > 2.0){
+			if  (player2Counter > 1.0){
 				GUI.DrawTexture(new Rect(Screen.width*.55f,  0f, Screen.width*.45f, Screen.height), bite11);
 			}
-			if  (player2Counter > 2.2){
+			if  (player2Counter > 1.1){
 				GUI.DrawTexture(new Rect(Screen.width*.55f,  0f, Screen.width*.45f, Screen.height), bite12);
+			}
+			if( player2Counter > 1.2){
+				GUI.DrawTexture(new Rect(Screen.width*.55f,  0f, Screen.width*.45f, Screen.height), bite13);
+			}
+			if( player2Counter > 1.3){
+				GUI.DrawTexture(new Rect(Screen.width*.55f,  0f, Screen.width*.45f, Screen.height), bite14);
+			}
+			if( player2Counter > 1.4){
+				GUI.DrawTexture(new Rect(Screen.width*.55f,  0f, Screen.width*.45f, Screen.height), bite15);
+			}
+			if( player2Counter > 1.5){
+				GUI.DrawTexture(new Rect(Screen.width*.55f,  0f, Screen.width*.45f, Screen.height), bite16);
+			}
+			if  (player2Counter > 1.6){
+				GUI.DrawTexture(new Rect(Screen.width*.55f,  0f, Screen.width*.45f, Screen.height), bite17);
+			}
+			if  (player2Counter > 1.7){
+				GUI.DrawTexture(new Rect(Screen.width*.55f,  0f, Screen.width*.45f, Screen.height), bite18);
+			}
+			if  (player2Counter > 1.8){
+				GUI.DrawTexture(new Rect(Screen.width*.55f,  0f, Screen.width*.45f, Screen.height), bite19);
 			}
 		}
 		
@@ -125,7 +174,9 @@ public class respawnPlayerScript : MonoBehaviour {
 	}
 	void player1Died(){
 		//print ("p1died called");
-		player1.audio.Play();
+		AudioSource[] audio = player1.GetComponents<AudioSource>();
+		AudioSource audio0 = audio[1];
+		audio0.Play();
 		enemyTargetTracker.PLAYER_ONE_DEAD = true;
 		player1dead = true;
 	}
