@@ -42,8 +42,6 @@ function Start () {
 	// Make the rigid body not change rotation
    	if (rigidbody)
 		rigidbody.freezeRotation = true;
-		target = player1;
-		enemyTargetTracker.TARGET_PLAYER = 0;
 }
 
 function OnTriggerEnter (other : Collider) {

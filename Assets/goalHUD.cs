@@ -32,7 +32,7 @@ public class goalHUD : MonoBehaviour {
 		if ( enemyTargetTracker.TARGET_PLAYER ==1){
 			if ( Time.time%2 >= 1 ){
 				GUI.color = new Color(.5F,.5F,.5F,_alpha);
-				GUI.DrawTexture(new Rect(0f,0f, screenWidth*.47f, screenHeight), ghostPic);
+				GUI.DrawTexture(new Rect(screenWidth*.53f, 0f, screenWidth*.47f, screenHeight), ghostPic);
 			}
 		}
 		if ( enemyTargetTracker.PLAYER2KEY == 1){
