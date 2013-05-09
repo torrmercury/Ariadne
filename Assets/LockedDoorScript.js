@@ -1,35 +1,18 @@
 // Smothly open a door
 var smooth = 2.0;
-var DoorOpenAngle = 90.0;
-var DoorCloseAngle = 0.0;
-var open : boolean;
 var enter : boolean;
 private var playernum = 0;
 
 //Main function
 function Update (){
-
-if(open == true){
-var target = Quaternion.Euler (0, DoorOpenAngle, 0);
-// Dampen towards the target rotation
-transform.localRotation = Quaternion.Slerp(transform.localRotation, target,
-Time.deltaTime * smooth);
-}
-
-if(open == false){
-var target1 = Quaternion.Euler (0, DoorCloseAngle, 0);
-// Dampen towards the target rotation
-transform.localRotation = Quaternion.Slerp(transform.localRotation, target1,
-Time.deltaTime * smooth);
-}
-
-if(enter == true){
-if((Input.GetKeyDown(KeyCode.F) || Input.GetButtonDown("Activate1")) && playernum == 1 && enemyTargetTracker.PLAYER1KEY == 1){
-	open = !open;
-} else if(Input.GetButtonDown("Activate2") && playernum == 2 && enemyTargetTracker.PLAYER2KEY == 1){
-	open = !open;
-}
-}
+	if(enter == true){
+		if((Input.GetKeyDown(KeyCode.F) || Input.GetButtonDown("Activate1")) && playernum == 1 && enemyTargetTracker.PLAYER1KEY == 0){
+			animation.Play("in-open-slowly");
+			Debug.Log("OPEN SESAME");
+		} else if(Input.GetButtonDown("Activate2") && playernum == 2 && enemyTargetTracker.PLAYER2KEY == 1){
+			animation.Play("in-open-slowly");
+		}
+	}
 }
 
 //Activate the Main function when player is near the door

@@ -18,6 +18,9 @@ ModelImporter:
     4300000: stone_frame
     4300002: stone_door_right
     4300004: stone_door_left
+    6400000: //RootNode
+    6400002: stone_door_left
+    6400004: stone_door_right
     7400000: idle
     7400002: in-snap-open
     7400004: in-slam-shut
@@ -236,7 +239,7 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: .00999999978
     meshCompression: 0
-    addColliders: 0
+    addColliders: 1
     importBlendShapes: 1
     swapUVChannels: 0
     generateSecondaryUV: 0
@@ -268,5 +271,5 @@ ModelImporter:
     rootMotionBoneName: 
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   additionalBone: 1
-  animationType: 2
+  animationType: 1
   userData: 
