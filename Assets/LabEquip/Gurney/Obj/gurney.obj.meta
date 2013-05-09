@@ -10,6 +10,7 @@ ModelImporter:
     2300000: Gurney_Gurney
     3300000: Gurney_Gurney
     4300000: Gurney_Gurney
+    6400000: Gurney_Gurney
     9500000: //RootNode
     11100000: //RootNode
   materials:
@@ -30,7 +31,7 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
-    addColliders: 0
+    addColliders: 1
     importBlendShapes: 1
     swapUVChannels: 0
     generateSecondaryUV: 0

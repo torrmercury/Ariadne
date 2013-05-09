@@ -65,6 +65,18 @@ ModelImporter:
     4300018: Tube1_Glass_lab_props.png
     4300020: Tube2_Glass_lab_props.png
     4300022: Tube3_Glass_lab_props.png
+    6400000: Beaker1_Glass_lab_props.png
+    6400002: Beaker2_Glass_lab_props.png
+    6400004: Chemical_default2
+    6400006: Desk_default_desk
+    6400008: Microscope_Microscope_auv
+    6400010: Pressurizer_base_Device1_auv
+    6400012: Pressurizer_PressureCan_auv
+    6400014: Stand_Rack
+    6400016: Test_tube_rack_Rack
+    6400018: Tube1_Glass_lab_props.png
+    6400020: Tube2_Glass_lab_props.png
+    6400022: Tube3_Glass_lab_props.png
     9500000: //RootNode
     11100000: //RootNode
   materials:
@@ -85,7 +97,7 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
-    addColliders: 0
+    addColliders: 1
     importBlendShapes: 1
     swapUVChannels: 0
     generateSecondaryUV: 0
