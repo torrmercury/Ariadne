@@ -10,9 +10,11 @@ public class Aggro_Switch : MonoBehaviour {
 	public GameObject player2;
 	public GameObject goal;
 	private float timeSwitched;
+	private int switchPosition;
 	
 	void Start () {
 		timeSwitched = 0.0f;
+		switchPosition = 0;
 	}
 	
 	// Update is called once per frame
@@ -30,7 +32,7 @@ public class Aggro_Switch : MonoBehaviour {
 				enemy.SendMessage("targetP2");
 		    	enemyTargetTracker.TARGET_PLAYER = 1;
 				audio.Play();
-				transform.Find("lever").animation.Play();
+				FlipAnimation();
 				Light light =  transform.GetComponentInChildren<Light>();
 				light.color = Color.red;
 				timeSwitched = Time.time;
@@ -40,11 +42,23 @@ public class Aggro_Switch : MonoBehaviour {
 				enemy.SendMessage("targetP1");
 				enemyTargetTracker.TARGET_PLAYER = 0;
 				audio.Play();
-				transform.Find("lever").animation.Play();
+				FlipAnimation();
 				Light light =  transform.GetComponentInChildren<Light>();
 				light.color = Color.red;
 				timeSwitched = Time.time;
 			}
+		}
+	}
+	void FlipAnimation(){
+		if(switchPosition == 0){
+			transform.Find("lever").animation.Play("FlipRight");
+			switchPosition = 1;
+		}else if(switchPosition == 1){
+			transform.Find("lever").animation.PlayQueued("FlipLeft");
+			switchPosition = 2;
+		}else{
+			transform.Find("lever").animation.PlayQueued("FlipRight");
+			switchPosition = 1;
 		}
 	}
 }

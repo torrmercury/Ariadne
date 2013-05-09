@@ -1,5 +1,5 @@
 #pragma strict
-
+#pragma downcast
 var player1: Transform;
 var player2: Transform;
 var goal: Transform;

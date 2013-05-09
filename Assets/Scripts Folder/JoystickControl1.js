@@ -34,7 +34,7 @@ function LateUpdate () {
 		if (!enemyTargetTracker.PLAYER_ONE_DEAD){ 	
        		x += Input.GetAxis("JoyLeftStickH1") * xSpeed * 0.02;
         	y += Input.GetAxis("JoyLeftStickV1") * ySpeed * 0.02;
-        	y = Mathf.Clamp(y, -60F, 60F);
+        	y = Mathf.Clamp(y, -45F, 60F);
         	var rotation = Quaternion.Euler(y, x, 0);
         	transform.rotation = rotation;
         }
@@ -51,13 +51,18 @@ function Update () {
 
 	if (!enemyTargetTracker.PLAYER_ONE_DEAD){
 		var controller : CharacterController = GetComponent(CharacterController);
-		var HDir = Vector3.zero;
 		
 		ForwardDir = this.transform.forward;
 		RightDir = this.transform.right;
 		CombinedDir = ForwardDir * Input.GetAxis("JoyRightStickV1") + RightDir * Input.GetAxis("JoyRightStickH1");
 		CombinedDir.y = 0;
 		controller.Move(CombinedDir.normalized * Time.deltaTime * speed);
+		
+		if(CombinedDir == Vector3.zero){
+			this.transform.Find("skeleton").animation.CrossFade("idle");
+		}else {
+			this.transform.Find("skeleton").animation.CrossFade("run");
+		}
 	}
 	
 	if (Input.GetButtonDown("flashlightOn")) {

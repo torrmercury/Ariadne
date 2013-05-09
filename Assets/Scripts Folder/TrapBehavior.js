@@ -1,5 +1,5 @@
 #pragma strict
-
+#pragma downcast
 function Start () {
 	for (var state : AnimationState in animation) {
     	state.speed = 4;
