@@ -15,11 +15,11 @@ public class weGotAWinner : MonoBehaviour {
 	public void OnTriggerEnter(Collider other){
 		if ("Player1" == other.tag){
 			Debug.Log ("win collision - player1");
-			Application.LoadLevel (1);
+			Application.LoadLevel (2);
 		}
 		else if ("Player2" == other.tag){
 			Debug.Log ("win collision - player2");
-			Application.LoadLevel (2);
+			Application.LoadLevel (3);
 		}
 	}
 	

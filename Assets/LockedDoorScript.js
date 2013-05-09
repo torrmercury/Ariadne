@@ -6,7 +6,7 @@ private var playernum = 0;
 //Main function
 function Update (){
 	if(enter == true){
-		if((Input.GetKeyDown(KeyCode.F) || Input.GetButtonDown("Activate1")) && playernum == 1 && enemyTargetTracker.PLAYER1KEY == 0){
+		if((Input.GetKeyDown(KeyCode.F) || Input.GetButtonDown("Activate1")) && playernum == 1 && enemyTargetTracker.PLAYER1KEY == 1){
 			animation.Play("in-open-slowly");
 			Debug.Log("OPEN SESAME");
 		} else if(Input.GetButtonDown("Activate2") && playernum == 2 && enemyTargetTracker.PLAYER2KEY == 1){

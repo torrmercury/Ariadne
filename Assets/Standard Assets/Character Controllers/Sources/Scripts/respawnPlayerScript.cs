@@ -182,7 +182,9 @@ public class respawnPlayerScript : MonoBehaviour {
 	}
 	
 	void player2Died(){
-		player1.audio.Play();
+		AudioSource[] audio = player1.GetComponents<AudioSource>();
+		AudioSource audio0 = audio[1];
+		audio0.Play();
 		enemyTargetTracker.PLAYER_TWO_DEAD = true;
 		player2dead = true;
 	}

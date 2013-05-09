@@ -13,7 +13,7 @@ public class goalHUD : MonoBehaviour {
 		int screenHeight = Screen.height;
 		
 		//Middle HUD
-		//GUI.DrawTexture( new Rect( screenWidth * .45f, 0f, screenWidth *.1f, screenHeight) ,  middleHUD); 
+		GUI.DrawTexture( new Rect( screenWidth * .45f, 0f, screenWidth *.1f, screenHeight) ,  middleHUD); 
 		
 		//Draw player 1 HUD
 		if ( enemyTargetTracker.TARGET_PLAYER ==0){

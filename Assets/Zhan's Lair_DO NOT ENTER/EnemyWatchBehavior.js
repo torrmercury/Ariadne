@@ -32,7 +32,7 @@ function Start () {
 
 function Update () {
 	
-	
+	/*
 	//footstep sounds
 	if (speed == normalSpeed){
 		stepLength = 0.7;
@@ -44,7 +44,7 @@ function Update () {
 		lastCheck = Time.time;
 		audio.Play();
 	} 
-
+	*/
 	var hit : RaycastHit;
     var rayDirection1 = player1.position - transform.position;
     var rayDirection2 = player2.position - transform.position;
@@ -125,7 +125,10 @@ function Update () {
     	moveDirection = transform.forward;
     }else{
     	var randomnum = -1;
-    	while(randomnum < 0){
+    	var maxloop = 0;
+    	moveDirection = Vector3.zero;
+    	while(randomnum < 0 && maxloop < 4){
+    		maxloop = maxloop+1;
     		randomnum = Random.Range(0,4);
     		switch(randomnum){
 	    		case 0:
